@@ -3,10 +3,24 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { FemaleComponent } from './female/female.component';
+import { FooterComponent } from './footer/footer.component';
+import { HomeComponent } from './home/home.component';
+import { KidsComponent } from './kids/kids.component';
+import { MaleComponent } from './male/male.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { PostComponent } from './post/post.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    FemaleComponent,
+    FooterComponent,
+    HomeComponent,
+    KidsComponent,
+    MaleComponent,
+    NavbarComponent,
+    PostComponent
   ],
   imports: [
     BrowserModule,
