@@ -10,7 +10,7 @@ import { HomeComponent } from './home/home.component';
  import {UnderNavComponent} from './underNav/underNav.component';
 // import { AccessoriesComponent } from './accessories/accessories.component';
 // import { AdminDataComponent } from './admin-data/admin-data.component';
-// import { AdminProductsComponent } from './admin-products/admin-products.component';
+ import { AdminProductsComponent } from './admin-products/admin-products.component';
 // import { CardComponent } from './card/card.component';
 import {NavbarComponent} from "./navbar/navbar.component"
 const routes: Routes = [
@@ -24,7 +24,7 @@ const routes: Routes = [
   // {component:ReviewListComponent,path:"review-list"},
   // {component:AccessoriesComponent, path: "accessories"},
   // {component:AdminDataComponent, path: "admin-data"},
-  // {component:AdminProductsComponent, path: "admin-products"},
+   {component:AdminProductsComponent, path: "admin-products"},
   // {component:CardComponent, path: "card"},
   // {component:AdminPartComponent, path:"adminPart"},
   // {component:SigninComponent, path:"signin"},
