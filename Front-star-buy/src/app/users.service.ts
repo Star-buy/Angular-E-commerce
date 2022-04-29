@@ -26,4 +26,8 @@ export class UsersService {
   // deleteData(id: string): Observable<any> {
   //   return this.http.delete(`${this.baseURL}/delete/${id}`)
   // }
+         /////////////////Review-List//////////////////////
+  getAllReviews():Observable<any>{
+    return this.http.get(`${this.baseURL}items/getitem`)
+  }
 }
