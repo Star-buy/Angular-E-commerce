@@ -5,6 +5,10 @@ const router = require("express").Router();
 
 const stripe = require("stripe")(process.env.STRIPE_API_SECRET_KEY);
 
+
+
+
+
 router.post("/pay", async (req, res) => {
   const { title, quantity, image, price } = req.body;
   const session = await stripe.checkout.sessions.create({

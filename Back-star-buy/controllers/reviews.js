@@ -38,4 +38,10 @@ module.exports = {
       }
     }
   },
+  getReviews: function (req, res) {
+   reviews.getReview((err, result)=>{
+      if(err){res.send(err)} 
+      res.status(200).send(result) 
+    })
+  }
 };
