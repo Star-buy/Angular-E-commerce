@@ -1,7 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700&display=swap");
-:root {
-  --red: #ff3838;
-}
+
 * {
   font-family: "Nunito", sans-serif;
   /* margin: 0;
@@ -88,5 +86,5 @@ header .navbar a {
   color: #fefefe;
 }
 header .navbar a:hover {
-  color: var(--red);
+  color: rgb(123, 255, 0);
 }
