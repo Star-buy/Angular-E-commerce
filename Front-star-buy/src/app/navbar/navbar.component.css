@@ -24,7 +24,7 @@ body {
   text-align: center;
   font-size: 3.5rem;
   padding: 1rem;
-  color: #666;
+  color: rgb(193, 71, 71);
 }
 .heading span {
   color: var(--red);
@@ -58,7 +58,7 @@ body {
   left: 0;
 }
 .btn:hover {
-  color: #fff;
+  color: rgb(150, 39, 39);
 }
 header {
   position: fixed;
@@ -88,5 +88,5 @@ header .navbar a {
   color: #fefefe;
 }
 header .navbar a:hover {
-  color: var(--red);
+  color:red;
 }
