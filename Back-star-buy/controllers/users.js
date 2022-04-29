@@ -3,6 +3,8 @@ const bcrypt = require("bcrypt");
 const cloudinary = require("../utils/cloudinary");
 var cloudinar = require("cloudinary");
 var cloudinar = require("cloudinary").v2;
+const jwt = require("jsonwebtoken"); 
+require("dotenv").config();
 
 module.exports = {
   getAllUsers: function (req, res) {
@@ -154,7 +156,13 @@ module.exports = {
                           if (result[0].role === "admin") {
                             return res.send("hi admin ");
                           }
-                          return res.send("login successful");
+                          // return res.send("login successful");
+                          users.getAllEmails(email,(err, result) => {
+                            if(err){return res.send(err);}
+                            const accessToken = jwt.sign(result[0].email , process.env.JWT_SECRET_KEY )
+                            res.send({accessToken:accessToken})
+                          })
+                         
                         } else {
                           res.send("not found");
                         }
