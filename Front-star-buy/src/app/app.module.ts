@@ -15,6 +15,13 @@ import {SigninComponent } from './signin/signin.component';
 import { SignupComponent } from './signup/signup.component';
 import {  UnderNavComponent } from './underNav/underNav.component';
 import {  AdminPartComponent} from './adminPart/adminPart.component';
+import { FemaleComponent } from './female/female.component';
+import { FooterComponent } from './footer/footer.component';
+import { HomeComponent } from './home/home.component';
+import { KidsComponent } from './kids/kids.component';
+import { MaleComponent } from './male/male.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { PostComponent } from './post/post.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +37,14 @@ import {  AdminPartComponent} from './adminPart/adminPart.component';
     AccessoriesComponent,
     AdminDataComponent,
     AdminProductsComponent,
-    CardComponent
+    CardComponent,
+    FemaleComponent,
+    FooterComponent,
+    HomeComponent,
+    KidsComponent,
+    MaleComponent,
+    NavbarComponent,
+    PostComponent
 
 
   ],
