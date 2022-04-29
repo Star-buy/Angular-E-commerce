@@ -14,7 +14,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 // import { CardComponent } from './card/card.component';
 // import {SigninComponent } from './signin/signin.component';
 // import { SignupComponent } from './signup/signup.component';
-// import {  UnderNavComponent } from './underNav/underNav.component';
+import {UnderNavComponent} from './underNav/underNav.component';
 // import {  AdminPartComponent} from './adminPart/adminPart.component';
 // import { FemaleComponent } from './female/female.component';
 // import { FooterComponent } from './footer/footer.component';
@@ -26,7 +26,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent 
+    NavbarComponent,
     // ReviewComponent,
     // ReviewListComponent,
     // PaymentComponent,
@@ -34,7 +34,7 @@ import { NavbarComponent } from './navbar/navbar.component';
     // AppComponent,
     // SigninComponent,
     // SignupComponent,
-    // UnderNavComponent,
+    UnderNavComponent,
     // AdminPartComponent,
     // AccessoriesComponent,
     // AdminDataComponent,
@@ -47,8 +47,6 @@ import { NavbarComponent } from './navbar/navbar.component';
     // MaleComponent,
     // NavbarComponent,
     // PostComponent
-
-
   ],
   imports: [
     BrowserModule,

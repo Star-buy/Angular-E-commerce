@@ -7,14 +7,18 @@ import { HomeComponent } from './home/home.component';
 // import {AdminPartComponent} from './adminPart/adminPart.component';
 // import {SigninComponent} from './signin/signin.component';
  import {SignupComponent} from './signup/signup.component';
-// import {UnderNavComponent} from './underNav/underNav.component';
+ import {UnderNavComponent} from './underNav/underNav.component';
 // import { AccessoriesComponent } from './accessories/accessories.component';
 // import { AdminDataComponent } from './admin-data/admin-data.component';
 // import { AdminProductsComponent } from './admin-products/admin-products.component';
 // import { CardComponent } from './card/card.component';
 import {NavbarComponent} from "./navbar/navbar.component"
 const routes: Routes = [
-  {component:NavbarComponent,path:"",children:[{component:SignupComponent,path:"signup"}]},
+  {component:NavbarComponent,path:"",
+      children:[
+        {component:SignupComponent,path:"signup"},
+        {component:UnderNavComponent,path:"underNav"},
+      ]},
   // {component:PaymentComponent,path:""},
   // {component:ReviewComponent,path:"review"},
   // {component:ReviewListComponent,path:"review-list"},
