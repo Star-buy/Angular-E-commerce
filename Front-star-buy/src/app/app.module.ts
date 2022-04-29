@@ -10,6 +10,7 @@ import { KidsComponent } from './kids/kids.component';
 import { MaleComponent } from './male/male.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { PostComponent } from './post/post.component';
+import { TestComponent } from './test/test.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { PostComponent } from './post/post.component';
     KidsComponent,
     MaleComponent,
     NavbarComponent,
-    PostComponent
+    PostComponent,
+    TestComponent
   ],
   imports: [
     BrowserModule,
