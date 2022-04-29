@@ -5,8 +5,8 @@ const database = "registrer";
 
 const connection = mysql.createConnection({
   user: "root",
-  password: "Root",
-  database: "registrer",
+  password: "",
+  database:  "registrer",
 });
 const db = Promise.promisifyAll(connection, { multiArgs: true });
 
