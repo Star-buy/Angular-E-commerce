@@ -10,20 +10,22 @@
         <div class="brandi"></div>
         <div class="brandtitle">Give as a review</div>
         <form >
-          <div class="inputsss">
+          <form class="inputsss" #reviewForm="ngForm" (ngSubmit)="onReviewPost(reviewForm.value)">
             <label class="pass" for="name">NAME</label>
             <input
               type="texte"
               class="inpat"
               placeholder="Put your name ..."
-          
+              name="name"
+              ngModel
             />
-            <label class="pass" for="location">LOCATION</label>
+            <label class="pass" for="location" >LOCATION</label>
             <input
               type="texte"
               class="inpat"
               placeholder="Put your Location ..."
-              
+              name="location"
+              ngModel
             />
             <label class="pass" for="image">ADD YOUR IMAGE</label>
             <div >
@@ -34,9 +36,9 @@
               <img src="" class="imaget" />
             </div>
             <label class="passs">DESCRIPTION</label>
-            <textarea></textarea>
-            <button type="submit" class="log">Send</button>
-          </div>
+            <textarea name="description" ngModel></textarea>
+            <input type="submit" class="log" value="Post Review"/>
+          </form>
         </form>
       </div>
     </div>
