@@ -24,7 +24,7 @@ module.exports = {
       callback(err, result);
     });
   },
-  updateitem: (
+  updatereviews: (
     id,
     name,
     location,
@@ -33,10 +33,10 @@ module.exports = {
     callback
   ) => {
     const sql =
-      "UPDATE items SET name = ? , location = ?, description = ?, price = ?,discount=?, gender = ? WHERE id = ?;";
+      "UPDATE reviews SET name = ? , location = ?, description = ?, image = ? WHERE id = ?;";
     connection.query(
       sql,
-      [title, description, image, price, discount, gender, id],
+      [name, location, description, image, id],
       (err, result) => {
         callback(err, result);
       }

@@ -4,17 +4,19 @@ require("dotenv").config();
 
 // Require controller modules.
 const {
-  getAllUsers,
-  addUser,
+  getOneUser,
+  signupUser,
   loginUser,
   signupAdmin,
   getRole,
+  
 } = require("../controllers/users");
 
 /// USERS ROUTES ///
-router.get("/getAll", getAllUsers);
+
+router.post("/getone", getOneUser);
 router.post("/getrole", getRole);
-router.post("/signup", addUser);
+router.post("/signup", signupUser);
 router.post("/login", loginUser);
 router.post("/signupAdmin", signupAdmin);
 
