@@ -117,22 +117,22 @@ module.exports = {
       }
     }
   },
-  loginUser: function (req, res) {
+  loginUser: function (req, res) { 
     const { email, password } = req.body;
     if (!email || !password) {
-      return res.status(500).send("Please fill all the fields");
+      return res.status(200).send("Please fill all the fields");
     } else {
       users.getAllEmails(email, (err, result) => {
         if (err) {
-          return res.status(500).send(err);
+          return res.status(200).send(err);
         } else if (!result.length) {
-          return res.status(500).send("user not found");
+          return res.status(200).send("user not found");
         } else {
           users.getPasswordByEmail(email, (err, result) => {
             if (err) {
-              return res.status(500).send(err);
+              return res.status(200).send(err);
             } else if (!result.length) {
-              return res.status(500).send("wrong password");
+              return res.status(200).send("wrong password");
             } else if (result) {
               try {
                 bcrypt.compare(
