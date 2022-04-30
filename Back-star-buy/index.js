@@ -22,7 +22,7 @@ app.use(cors({ origin: "*" }));
 app.use("/users", usersRoute);
 app.use("/items", items);
 app.use("/payment", payment);
-app.use("/reviews", reviews);
+app.use("/", reviews);
 
 
 app.listen(port, () => {

@@ -10,12 +10,12 @@ module.exports = {
   postReview: async function (req, res) {
     const { name, location, description, image } = req.body;
     if (!name || !location || !description || !image) {
-      res.status(500).send("fill all the field");
+      res.status(500).send({message:"fill all the field"});
     } else {
-      jwt.verify(req.token, process.env.JWT_SECRET_KEY, async (err) => {
-        if (err) {
-          res.send('not authenticated');
-        } else {
+      // jwt.verify(req.token, process.env.JWT_SECRET_KEY, async (err) => {
+      //   if (err) {
+      //     res.send('not authenticated');
+      //   } else {
           try {
             const response = await cloudinar.uploader.upload(
               image,
@@ -33,18 +33,15 @@ module.exports = {
                       if (err) {
                         res.send(err);
                       }
-                      return res.status(200).send(" your review matter");
+                      return res.status(200).send({message:" your review matter"});
                     }
                   );
                 }
               }
             );
           } catch (err) {
-            res.send(err);
+            res.send({err:"you have an error with the server"});
           }
-        }
-      });
-   
     }
   },
   getReviews: function (req, res) {

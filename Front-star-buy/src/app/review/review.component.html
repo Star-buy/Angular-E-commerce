@@ -30,11 +30,12 @@
             <label class="pass" for="image">ADD YOUR IMAGE</label>
             <div >
               <h2 class="texto">Select your image</h2>
-              <input type="file" />
+               <div >
+              <img [src]="image" class="imaget" />
+            </div> 
+              <input type="file" id="img" (change)="onSelect($event)" />
             </div>
-            <div v-else>
-              <img src="" class="imaget" />
-            </div>
+            
             <label class="passs">DESCRIPTION</label>
             <textarea name="description" ngModel></textarea>
             <input type="submit" class="log" value="Post Review"/>

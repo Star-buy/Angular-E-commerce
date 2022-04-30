@@ -6,15 +6,20 @@ import { UsersService } from '../users.service';
   styleUrls: ['./review-list.component.css']
 })
 export class ReviewListComponent implements OnInit {
-  reviewdata:any;
+  reviewdata: any;
   constructor(private userService: UsersService) {
     this.getAllReviews()
   }
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.getAllReviews()
+  }
+  fetchdata(){
+    this.getAllReviews()
+  }
   getAllReviews() {
     this.userService.getAllReviews()
       .subscribe(data => {
-        this.reviewdata=data;
+        this.reviewdata = data;
         console.log(data)
       })
   }
