@@ -10,24 +10,25 @@ module.exports = {
     price,
     discount,
     gender,
+    stock,
     callback
   ) => {
     const sql =
-      "INSERT INTO items (title,description,image,price,discount,gender) VALUES (?,?,?,?,?,?)";
+      "INSERT INTO items (title,description,image,price,discount,gender,stock) VALUES (?,?,?,?,?,?,?)";
     connection.query(
       sql,
-      [title, description, image, price, discount, gender],
+      [title, description, image, price, discount, gender,stock],
       (err, result) => {
         callback(err, result);
       }
     );
   },
-  postItemwithoutdisc: (title, description, image, price, gender, callback) => {
+  postItemwithoutdisc: (title, description, image, price, gender,stock, callback) => {
     const sql =
-      "INSERT INTO items (title,description,image,price,gender) VALUES (?,?,?,?,?)";
+      "INSERT INTO items (title,description,image,price,gender,stock) VALUES (?,?,?,?,?,?)";
     connection.query(
       sql,
-      [title, description, image, price, gender],
+      [title, description, image, price, gender,stock],
       (err, result) => {
         callback(err, result);
       }
@@ -55,13 +56,34 @@ module.exports = {
     price,
     discount,
     gender,
+    stock,
     callback
   ) => {
     const sql =
-      "UPDATE items SET title = ? , description = ?, image = ?, price = ?,discount=?, gender = ? WHERE id = ?;";
+      "UPDATE items SET title = ? , description = ?, image = ?, price = ? , discount = ?, gender = ? , stock = ? WHERE id = ?;"
     connection.query(
       sql,
-      [title, description, image, price, discount, gender, id],
+      [title, description, image, price, discount, gender,stock, id],
+      (err, result) => {
+        callback(err, result);
+      }
+    );
+  },
+  updateitemwithoutdisc: (
+    id,
+    title,
+    description,
+    image,
+    price,
+    gender,
+    stock,
+    callback
+  ) => {
+    const sql =
+      "UPDATE items SET title = ? , description = ?, image = ?, price = ?, gender = ? ,stock = ? WHERE id = ?;";
+    connection.query(
+      sql,
+      [title, description, image, price, gender,stock, id],
       (err, result) => {
         callback(err, result);
       }
