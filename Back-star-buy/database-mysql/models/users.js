@@ -2,9 +2,9 @@ const connection = require("../index");
 
 module.exports = {
   //a function which fetches all the users.
-  getAll: function (callback) {
-    const sql = "SELECT * FROM `accounts`";
-    connection.query(sql, function (error, results, fields) {
+  getAll: function (email,callback) {
+    const sql = "SELECT * FROM `accounts` WHERE email = ? ";
+    connection.query(sql,[email], function (error, results, fields) {
       callback(error, results);
     });
   },
