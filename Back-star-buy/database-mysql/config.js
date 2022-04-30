@@ -32,7 +32,8 @@ module.exports = (db) => {
       image VARCHAR(255) ,
       price int NOT NULL,
       discount int ,
-      gender VARCHAR(10) 
+      gender VARCHAR(10),
+      stock int NOT NULL
     );`
       )
       .error((err) => {

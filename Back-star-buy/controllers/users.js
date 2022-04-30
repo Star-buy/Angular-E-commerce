@@ -3,15 +3,18 @@ const bcrypt = require("bcrypt");
 const cloudinary = require("../utils/cloudinary");
 var cloudinar = require("cloudinary");
 var cloudinar = require("cloudinary").v2;
+const jwt = require("jsonwebtoken");
+require("dotenv").config();
 
 module.exports = {
-  getAllUsers: function (req, res) {
-    users.getAll(function (err, results) {
+  getOneUser: function (req, res) {
+    const { email } = req.body;
+    users.getAll(email, (err, results) => {
       if (err) res.status(500).send(err);
       else res.json(results);
     });
   },
-  addUser: async function (req, res) {
+  signupUser: async function (req, res) {
     const { email, password, confirmPassword, username, image } = req.body;
     if (image) {
       if (!email || !password || !username || !confirmPassword) {
@@ -153,8 +156,30 @@ module.exports = {
                         if (result.length) {
                           if (result[0].role === "admin") {
                             return res.send("hi admin ");
+                          } else if (result[0].role === null) {
+                            //return res.send("login successful");
+                            users.getAll(email, (err, result) => {
+                              if (err) {
+                                return res.send(err);
+                              } else {
+                                const user = {
+                                  id: result[0].id,
+                                  name: result[0].username,
+                                  email: result[0].email,
+                                };
+                                jwt.sign(
+                                  { user },
+                                  process.env.JWT_SECRET_KEY,
+                                  (err, token) => {
+                                    if (err) {
+                                      return res.send(err);
+                                    }
+                                    res.send(token);
+                                  }
+                                );
+                              }
+                            });
                           }
-                          return res.send("login successful");
                         } else {
                           res.send("not found");
                         }
@@ -171,6 +196,7 @@ module.exports = {
       });
     }
   },
+
   signupAdmin: async function (req, res) {
     const { email, password, confirmPassword, username, role } = req.body;
     if (!email || !password || !confirmPassword || !username || !role) {

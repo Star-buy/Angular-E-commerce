@@ -15,7 +15,12 @@ import { AdminPartComponent } from './adminPart/adminPart.component';
 import { ReviewComponent } from './review/review.component';
 import {SigninComponent} from './signin/signin.component';
 // import { AccessoriesComponent } from './accessories/accessories.component';
+// import { AdminDataComponent } from './admin-data/admin-data.component';
+// import { CardComponent } from './card/card.component';
 // import { ReviewListComponent } from './review-list/review-list.component';
+
+
+
 
 const routes: Routes = [
   {
@@ -42,6 +47,7 @@ const routes: Routes = [
   // {component:ReviewComponent,path:"review"},
   // {component:ReviewListComponent,path:"review-list"},
   // {component:AccessoriesComponent, path: "accessories"},
+  // {component:AdminDataComponent, path: "admin-data"},
   // {component:CardComponent, path: "card"},
 ]
 @NgModule({
