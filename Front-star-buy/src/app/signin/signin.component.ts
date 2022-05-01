@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import {AuthuserService} from '../services/AuthuserService';
+// import {AuthuserService} from '../services/AuthuserService';
 import axios from 'axios'
 @Component({
   selector: 'app-signin',
@@ -9,7 +9,7 @@ import axios from 'axios'
 })
 export class SigninComponent implements OnInit {
 
-  constructor( private aus:AuthuserService) {}
+  // constructor( private aus:AuthuserService) {}
   ngOnInit(): void {
   }
   email = ""
@@ -21,26 +21,22 @@ this.email = event.target.value
 GetPassword(event:any){
 this.password= event.target.value
 }
+
 loginUser(f:any){
   
   let data=f.value
 
   var email = this.email  
   var password = this.password
-  console.log(email,"sirine")
-  console.log(password,"sie")
-  axios.post("http://localhost:3000/users/login" , {email:email,password:password}).then(res=> { 
 
-    localStorage.setItem('token', res.data);
-  // console.log(password,"ss")
-// console.log(email,"aze")
-console.log(res)
+  axios.post("http://localhost:3000/users/login" , {email,password}).then(res=> { 
+localStorage.setItem('token', res.data);
 
 
   })
-  this.aus.loginUser(data).subscribe(data=>{
+//   this.aus.loginUser(data).subscribe(data=>{
   
-    console.log(data)
-})
+//     console.log(data)
+// })
 }
 }

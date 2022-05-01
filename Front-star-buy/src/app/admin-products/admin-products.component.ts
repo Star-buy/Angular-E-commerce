@@ -20,6 +20,22 @@ export class AdminProductsComponent implements OnInit {
 
   
   constructor(
+    private userService: UsersService
+ ) { }
+url:any=""
+title=""
+     
+seletImage(event:any){
+  let reader = new FileReader();
+  reader.readAsDataURL(event.target.files[0])
+  reader.onload = () =>{
+    this.url = reader.result
+   }
+  }
+
+  getTitle(event:any){
+    this.title = event.target.value 
+    }
     private userService: UsersService,
     private http: HttpClient,
     private router: Router

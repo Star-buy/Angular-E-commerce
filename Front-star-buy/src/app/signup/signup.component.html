@@ -33,7 +33,8 @@
           <input class="w3-input w3-border" type="password" #password name="password"  required (change)="GetPassword($event)">
         </div>
      
-       
+        <input name="image" type="file" required (change)="seletImage($event)"><br/>
+        <img class="image" *ngIf="url" [src]="url" alt="image" />
         <button type="submit" (click)="addUser($event)" class="w3-button w3-block w3-padding-large w3-red w3-margin-bottom">Login</button>
        
        
