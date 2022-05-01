@@ -1,186 +1,37 @@
-<div>
-    <!-- <div>
-      <h1>Signin</h1>
-      <input type="email" name="email" v-model="email" />
-      <input type="password" name="password" v-model="password" />
-      <button @click="login">registrer</button><br/>
-    {{data}}
-      <img v-if="boolean" v-bind:src="`${imgsrc}`"/>   
-     </div>  -->
-    <body>
-      <div class="login-root">
-        <div
-          class="box-root flex-flex flex-direction--column"
-          style="min-height: 100vh; flex-grow: 1"
-        >
-          <div class="loginbackground box-background--white padding-top--64">
-            <div class="loginbackground-gridContainer">
-              <div
-                class="box-root flex-flex"
-                style="grid-area: top / start / 8 / end"
-              >
-                <div
-                  class="box-root"
-                  style="
-                    background-image: linear-gradient(
-                      white 0%,
-                      rgb(247, 250, 252) 33%
-                    );
-                    flex-grow: 1;
-                  "
-                ></div>
-              </div>
-              <div class="box-root flex-flex" style="grid-area: 4 / 2 / auto / 5">
-                <div
-                  class="box-root box-divider--light-all-2 animationLeftRight tans3s"
-                  style="flex-grow: 1"
-                ></div>
-              </div>
-              <div
-                class="box-root flex-flex"
-                style="grid-area: 6 / start / auto / 2"
-              >
-                <div
-                  class="box-root box-background--blue800"
-                  style="flex-grow: 1"
-                ></div>
-              </div>
-              <div
-                class="box-root flex-flex"
-                style="grid-area: 7 / start / auto / 4"
-              >
-                <div
-                  class="box-root box-background--blue animationLeftRight"
-                  style="flex-grow: 1"
-                ></div>
-              </div>
-              <div class="box-root flex-flex" style="grid-area: 8 / 4 / auto / 6">
-                <div
-                  class="box-root box-background--gray100 animationLeftRight tans3s"
-                  style="flex-grow: 1"
-                ></div>
-              </div>
-              <div
-                class="box-root flex-flex"
-                style="grid-area: 2 / 15 / auto / end"
-              >
-                <div
-                  class="box-root box-background--cyan200 animationRightLeft tans4s"
-                  style="flex-grow: 1"
-                ></div>
-              </div>
-              <div
-                class="box-root flex-flex"
-                style="grid-area: 3 / 14 / auto / end"
-              >
-                <div
-                  class="box-root box-background--blue animationRightLeft"
-                  style="flex-grow: 1"
-                ></div>
-              </div>
-              <div
-                class="box-root flex-flex"
-                style="grid-area: 4 / 17 / auto / 20"
-              >
-                <div
-                  class="box-root box-background--gray100 animationRightLeft tans4s"
-                  style="flex-grow: 1"
-                ></div>
-              </div>
-              <div
-                class="box-root flex-flex"
-                style="grid-area: 5 / 14 / auto / 17"
-              >
-                <div
-                  class="box-root box-divider--light-all-2 animationRightLeft tans3s"
-                  style="flex-grow: 1"
-                ></div>
-              </div>
-            </div>
-          </div>
-          <div
-            class="box-root padding-top--24 flex-flex flex-direction--column"
-            style="flex-grow: 1; z-index: 9"
-          >
-            <div
-              class="box-root padding-top--48 padding-bottom--24 flex-flex flex-justifyContent--center"
-            ></div>
-            <h1 class="h1-h1" style="text-align: center">
-              <a href="http://blog.stackfindover.com/" rel="dofollow" class="a-a"
-                >Star-buy</a
-              >
-            </h1>
-            <div class="formbg-outer">
-              <div class="formbg">
-                <div class="formbg-inner padding-horizontal--48">
-                  <span class="padding-bottom--15">Sign in to your account</span>
-                  <div id="stripe-login">
-                    <div class="field padding-bottom--24">
-                      <label class="label-label" for="email">Email</label>
-                      <input
-                        class="input-input"
-                        type="email"
-                        name="email"
-                        placeholder="@gmail.com"
-                       
-                      />
-                    </div>
-                    <div class="field padding-bottom--24">
-                      <div class="grid--50-50">
-                        <label class="label-label" for="password" >Password</label>
-                        <div class="reset-pass">
-                          <a class="a-a" href="#">Forgot your password?</a>
-                        </div>
-                      </div>
-                      <input
-                        class="input-input"
-                        type="password"
-                        name="password"
-                        placeholder="Put your password..."
-                       
-                      />
-                    </div>
-                    <div
-                      class="field field-checkbox padding-bottom--24 flex-flex align-center"
-                    ></div>
-                    <div class="field padding-bottom--24">
-                      <button
-                        class="input-input"
-                        type="submit"
-                        name="submit"
-                       
-                      >
-                        Continue</button
-                      ><br />
-  
-                      <!-- <router-link>hello</router-link> -->
-                    </div>
-                    <div class="field"></div>
-                  </div>
-                </div>
-              </div>
-            <div class="namedata" > sirine</div> 
-              <img src= />
-              <div class="footer-link padding-top--24">
+<div class="w3-main" style="margin-left:340px;margin-right:40px">
+
+  <div class="w3-container" id="contact" style="margin-top:75px">
+      <h1 class="w3-xxxlarge w3-text-red"><b>Login</b></h1>
+      
+      <form #f="ngForm"(ngSubmit)="loginUser(f)" >
+          <div class="w3-section">
+              
+             </div> 
+        <div class="w3-section">
+          <label>Email</label>
          
-                <div
-                  class="listing padding-top--24 padding-bottom--24 flex-flex center-center"
-                >
-                  <span class="span-span"
-                    ><a href="#" class="a-a">Contact</a></span
-                  >
-                  <span class="span-span"
-                    ><a href="#" class="a-a">Privacy & terms</a></span
-                  >
-                </div>
-              </div>
-            </div>
-          </div>
+          <input class="w3-input w3-border" type="email" #email name="email"  required (change)="GetEmail($event)">
+         
         </div>
-      </div>
-    </body>
-    <div>
-     
-      <img src="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" />
+        <div class="w3-section">
+          <label>Password</label>
+          <input class="w3-input w3-border" type="password" #password name="password"  required (change)="GetPassword($event)">
+        </div>
+        <div>
+          <span class="span-span"
+                >Don't have an account?
+                <a href="" class="a-a" routerLink="/signup"
+                  >Sign up</a
+                ></span>
+        </div>
+       
+        <button type="submit" (click)="loginUser($event)" class="w3-button w3-block w3-padding-large w3-red w3-margin-bottom">Login</button>
+       
+       
+      </form>  
+      
     </div>
-    </div>
+  
+  </div> 
+
+
