@@ -7,13 +7,8 @@ require("dotenv").config();
 
 module.exports = {
   postItem: async function (req, res) {
-    console.log(req.body);
-    const { title, description,  price, gender, discount } = req.body;
-    const image = "https://res.cloudinary.com/dm6yw4dn0/image/upload/v1651285239/yxyzbdtptgrl1em8zy6z.jpg";
-  
-
-
-    if (!title || !description || !price || !gender) {
+    const { title, description, image, price, gender, discount } = req.body;
+    if (!title || !description || !image || !price || !gender) {
       res.status(404).send("please fill all the fields");
     }
     if (discount) {
