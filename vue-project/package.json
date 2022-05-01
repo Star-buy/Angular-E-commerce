@@ -1,0 +1,30 @@
+{
+  "name": "vue-project",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build --watch ",
+    "preview": "vite preview --port 5050"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.1.1",
+    "@fortawesome/free-solid-svg-icons": "^6.1.1",
+    "@fortawesome/vue-fontawesome": "^3.0.0-5",
+    "axios": "^0.26.1",
+    "body-parser": "^1.20.0",
+    "chokidar": "^3.5.3",
+    "cors": "^2.8.5",
+    "express": "^4.17.3",
+    "mon": "^0.0.8",
+    "mongodb": "^4.5.0",
+    "mongoose": "^6.3.0",
+    "react-stripe-checkout": "^2.6.3",
+    "swiper": "^6.8.4",
+    "vue": "^3.2.31",
+    "vue-router": "^4.0.13"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^2.3.1",
+    "vite": "^2.9.1"
+  }
+}
