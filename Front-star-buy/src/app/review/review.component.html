@@ -1,47 +1,41 @@
-<h1>review component</h1>
-<div>
-    <div class="rev-section">
-      <h2 class="rev-title" style="text-align: center">Our Custumers Love Us</h2>
-      <p class="note">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil laboriosam
-        possimus perferendis non error neque.
-      </p>
-      <div class="con">
-        <div class="brandi"></div>
-        <div class="brandtitle">Give as a review</div>
-        <form >
-          <form class="inputsss" #reviewForm="ngForm" (ngSubmit)="onReviewPost(reviewForm.value)">
-            <label class="pass" for="name">NAME</label>
-            <input
-              type="texte"
-              class="inpat"
-              placeholder="Put your name ..."
-              name="name"
-              ngModel
-            />
-            <label class="pass" for="location" >LOCATION</label>
-            <input
-              type="texte"
-              class="inpat"
-              placeholder="Put your Location ..."
-              name="location"
-              ngModel
-            />
-            <label class="pass" for="image">ADD YOUR IMAGE</label>
-            <div >
-              <h2 class="texto">Select your image</h2>
-               <div >
-              <img [src]="image" class="imaget" />
-            </div> 
-              <input type="file" id="img" (change)="onSelect($event)" />
+
+
+<div class="w3-main" style="margin-left:340px;margin-right:40px">
+
+  <div class="w3-container" id="contact" style="margin-top:75px">
+      <h1 class="w3-xxxlarge w3-text-red"><b>Review</b></h1>
+      
+      <form #f="ngForm"(ngSubmit)=" postReview(f)" >
+          <div class="w3-section">
+             
+             </div> 
+             <div class="w3-section">
+              <label>name</label>
+              <input class="w3-input w3-border" type="name" #name name="name"  required (change)=" GetName($event)">
             </div>
-            
-            <label class="passs">DESCRIPTION</label>
-            <textarea name="description" ngModel></textarea>
-            <input type="submit" class="log" value="Post Review"/>
-          </form>
-        </form>
-      </div>
+
+
+            <div class="w3-section">
+              <label>location</label>
+              <input class="w3-input w3-border" type="location" #location name="location"  required (change)="GetLocation($event)">
+            </div>
+
+
+
+        <div class="w3-section">
+          <label>description</label>
+         
+          <input class="w3-input w3-border" type="description" #description name="email"  required (change)="getDescription($event)">
+         
+        </div>
+       
+     
+       
+        <button type="submit" (click)=" postReview($event)" class="w3-button w3-block w3-padding-large w3-red w3-margin-bottom">Review</button>
+       
+       
+      </form>  
+      
     </div>
-    <app-review-list></app-review-list>
-  </div>
+  
+  </div> 

@@ -18,29 +18,29 @@ module.exports = {
     const { email, password, confirmPassword, username, image } = req.body;
     if (image) {
       if (!email || !password || !username || !confirmPassword) {
-        res.status(500).send("fill all the field");
+        res.send("fill all the field");
       } else {
         if (confirmPassword !== password) {
-          res.status(500).send("please confirm your password");
+          res.send("please confirm your password");
         } else {
           users.getAllNames(username, async (err, result) => {
             if (err) {
-              res.status(400).send(err);
+              res.send(err);
             } else if (result.length > 0) {
-              res.status(400).send("this user name exist");
+              res.send("this user name exist");
             } else {
               users.getAllEmails(email, async (err, result) => {
                 if (err) {
-                  res.status(400).send(err);
+                  res.send(err);
                 } else if (result.length > 0) {
-                  res.status(400).send("this email name exist");
+                  res.send("this email name exist");
                 } else {
                   try {
                     const response = await cloudinar.uploader.upload(
                       image,
                       async function (error, result) {
                         if (error) {
-                          res.status(400).send(error);
+                          res.send(error);
                         } else {
                           const url = result.secure_url;
                           const salt = await bcrypt.genSalt();
@@ -76,22 +76,22 @@ module.exports = {
       }
     } else {
       if (!email || !password || !username || !confirmPassword) {
-        res.status(500).send("fill all the field");
+        res.send("fill all the field");
       } else {
         if (confirmPassword != password) {
-          res.status(500).send("please confirm your password");
+          res.send("please confirm your password");
         } else {
           users.getAllNames(username, async (err, result) => {
             if (err) {
-              res.status(400).send(err);
+              res.send(err);
             } else if (result.length > 0) {
-              res.status(400).send("this user name exist");
+              res.send("this user name exist");
             } else {
               users.getAllEmails(email, async (err, result) => {
                 if (err) {
-                  res.status(400).send(err);
+                  res.send(err);
                 } else if (result.length > 0) {
-                  res.status(400).send("this email name exist");
+                  res.send("this email name exist");
                 } else {
                   try {
                     const salt = await bcrypt.genSalt();
@@ -120,22 +120,22 @@ module.exports = {
       }
     }
   },
-  loginUser: function (req, res) {
+  loginUser: function (req, res) { 
     const { email, password } = req.body;
     if (!email || !password) {
-      return res.status(500).send("Please fill all the fields");
+      return res.status(200).send({message:"Please fill all the fields"});
     } else {
       users.getAllEmails(email, (err, result) => {
         if (err) {
-          return res.status(500).send(err);
+          return res.status(200).send(err);
         } else if (!result.length) {
-          return res.status(500).send("user not found");
+          return res.status(200).send({message:"user not found"});
         } else {
           users.getPasswordByEmail(email, (err, result) => {
             if (err) {
-              return res.status(500).send(err);
+              return res.status(200).send(err);
             } else if (!result.length) {
-              return res.status(500).send("wrong password");
+              return res.status(200).send({message:"wrong password"});
             } else if (result) {
               try {
                 bcrypt.compare(
@@ -146,7 +146,7 @@ module.exports = {
                       res.send(err);
                     }
                     if (result === false) {
-                      res.send("login failed");
+                      res.send({message:"login failed"});
                     }
                     if (result === true) {
                       users.getRole(email, (err, result) => {
@@ -155,7 +155,7 @@ module.exports = {
                         }
                         if (result.length) {
                           if (result[0].role === "admin") {
-                            return res.send("hi admin ");
+                            return res.send({message:" hi admin"});
                           } else if (result[0].role === null) {
                             //return res.send("login successful");
                             users.getAll(email, (err, result) => {

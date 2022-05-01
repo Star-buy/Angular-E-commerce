@@ -1,33 +1,54 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-
+import axios from 'axios'
 @Component({
   selector: 'app-review',
   templateUrl: './review.component.html',
   styleUrls: ['./review.component.css']
 })
 export class ReviewComponent implements OnInit {
-  title = "AngularHttpRequest";
-  image=""
-  constructor(private http: HttpClient) {
+ 
+  constructor() {
   }
   
   ngOnInit(): void {
   }
-  onSelect(event:any){
-    if(event.target.files[0]){
-     let reader = new FileReader();
-     reader.readAsDataURL(event.target.files[0]);
-     reader.onload =(event:any)=>{
-       this.image =event.target.result;
-     }
+
+  name =""
+  location=""
+  description=""
+
+  GetName(event:any){
+    this.name = event.target.value
+    
     }
-   }
-  onReviewPost(reviews: { name: string, location: string, description: string  ,image:String}) {
-    console.log(reviews);
-    this.http.post("http://localhost:3000/postreview", reviews)
-      .subscribe((res) => {
-        console.log(res);
-      })
-  }
+
+    GetLocation(event:any){
+      this.location = event.target.value
+      
+      }
+
+      getDescription(event:any){
+        this.description = event.target.value
+        
+        }
+        postReview(f:any){
+          let data=f.value
+
+         var name =this.name
+         var description =this.description
+         var location =this.location
+         const token= localStorage.getItem('token')
+         console.log(token)
+        const data1 ={name:name,description:description,
+          location:location}
+         axios.post("http://localhost:3000/reviews/postreview",data1,
+         {headers:{'Authorization':`Bearer ${token}`}}
+         ).then(res=> { 
+         
+          console.log(data1)
+         console.log(res)
+
+       
+        })
+      }
 }

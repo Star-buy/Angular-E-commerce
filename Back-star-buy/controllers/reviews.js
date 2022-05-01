@@ -8,9 +8,10 @@ require("dotenv").config();
 
 module.exports = {
   postReview: async function (req, res) {
-    const { name, location, description, image } = req.body;
+    const image ="https://res.cloudinary.com/dm6yw4dn0/image/upload/v1651179910/opuf0qaattstvkecpakk.jpg"
+    const { name, location, description} = req.body;
     if (!name || !location || !description || !image) {
-      res.status(500).send({message:"fill all the field"});
+      res.send("fill all the field");
     } else {
       // jwt.verify(req.token, process.env.JWT_SECRET_KEY, async (err) => {
       //   if (err) {
@@ -33,7 +34,7 @@ module.exports = {
                       if (err) {
                         res.send(err);
                       }
-                      return res.status(200).send({message:" your review matter"});
+                      return res.send(" your review matter");
                     }
                   );
                 }
