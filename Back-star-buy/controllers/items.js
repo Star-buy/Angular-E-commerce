@@ -220,7 +220,7 @@ module.exports = {
       req.token = bearerToken;
       next();
     } else {
-      res.sendStatus(403);
+      res.send("lool");
     }
   },
 };

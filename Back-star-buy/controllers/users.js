@@ -10,7 +10,7 @@ module.exports = {
   getOneUser: function (req, res) {
     const { email } = req.body;
     users.getAll(email, (err, results) => {
-      if (err) res.status(500).send(err);
+      if (err) res.send(err);
       else res.json(results);
     });
   },
@@ -91,7 +91,7 @@ module.exports = {
                 if (err) {
                   res.send(err);
                 } else if (result.length > 0) {
-                  res.send("this email exist");
+                  res.send("this email name exist");
                 } else {
                   try {
                     const salt = await bcrypt.genSalt();
@@ -120,7 +120,7 @@ module.exports = {
       }
     }
   },
-  loginUser: function (req, res) {
+  loginUser: function (req, res) { 
     const { email, password } = req.body;
     if (!email || !password) {
       return res.send("Please fill all the fields");
@@ -146,7 +146,7 @@ module.exports = {
                       res.send(err);
                     }
                     if (result === false) {
-                      res.send("login failed");
+                      res.send({message:"login failed"});
                     }
                     if (result === true) {
                       users.getRole(email, (err, result) => {
@@ -155,7 +155,7 @@ module.exports = {
                         }
                         if (result.length) {
                           if (result[0].role === "admin") {
-                            return res.send("hi admin ");
+                            return res.send("hi admin");
                           } else if (result[0].role === null) {
                             //return res.send("login successful");
                             users.getAll(email, (err, result) => {
@@ -166,6 +166,8 @@ module.exports = {
                                   id: result[0].id,
                                   name: result[0].username,
                                   email: result[0].email,
+                                  image: result[0].image,
+                                  role: result[0].role
                                 };
                                 jwt.sign(
                                   { user },
@@ -241,7 +243,7 @@ module.exports = {
     const email = req.body.email;
     users.getRole(email, (err, result) => {
       if (err) {
-        res.status(500).send(err);
+        res.send(err);
       }
       if (!result.length) {
         res.send("not found");
