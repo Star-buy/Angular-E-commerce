@@ -5,6 +5,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
+// import { HttpClientModule } from '@angular/common/http';
+
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -22,6 +25,9 @@ import { AdminPartComponent } from './adminPart/adminPart.component';
 import { ReviewListComponent } from './review-list/review-list.component';
 import { SigninComponent } from './signin/signin.component';
 import { SignupComponent } from './signup/signup.component';
+import { FormsModule } from '@angular/forms';
+// import { ServicesComponent } from './services/AuthuserService';
+import { HttpClientModule} from '@angular/common/http'
 
 @NgModule({
   declarations: [
@@ -40,6 +46,7 @@ import { SignupComponent } from './signup/signup.component';
     ReviewListComponent,
     SigninComponent,
     SignupComponent,
+    // ServicesComponent,
   ],
   imports: [
     BrowserModule,
@@ -47,6 +54,8 @@ import { SignupComponent } from './signup/signup.component';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule
+    FormsModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]

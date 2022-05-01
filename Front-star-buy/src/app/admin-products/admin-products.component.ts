@@ -46,6 +46,8 @@ export class AdminProductsComponent implements OnInit {
       }, error => { console.log(error);})     
       //console.log(this.product);
     }
+      })
+  }
 }
 
 

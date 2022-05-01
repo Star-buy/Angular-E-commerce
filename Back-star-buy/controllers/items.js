@@ -3,6 +3,7 @@ const bcrypt = require("bcrypt");
 const cloudinary = require("../utils/cloudinary");
 var cloudinar = require("cloudinary");
 var cloudinar = require("cloudinary").v2;
+const jwt = require("jsonwebtoken");
 require("dotenv").config();
 
 module.exports = {
@@ -14,63 +15,81 @@ module.exports = {
 
 
     if (!title || !description || !price || !gender) {
+    const { title, description, image, price, gender, discount ,stock} = req.body;
+    if (!title || !description || !image || !price || !gender || !stock) {
+
       res.status(404).send("please fill all the fields");
     }
-    if (discount) {
-      try {
-        const response = await cloudinar.uploader.upload(
-          image,
-          async function (error, result) {
-            if (error) {
-              res.send(error);
-            }
-            const url = result.secure_url;
-            items.postItemwithdisc(
-              title,
-              description,
-              url,
-              price,
-              discount,
-              gender,
-              async (err, result) => {
-                if (err) {
-                  res.send(err);
+    else if (discount) {
+      jwt.verify(req.token, process.env.JWT_SECRET_KEY, async (err) => {
+        if (err) {
+          res.send('not authenticated');
+        } else {
+          try {
+            const response = await cloudinar.uploader.upload(
+              image,
+              async function (error, result) {
+                if (error) {
+                  res.send(error);
                 }
-                res.send("items added successfully");
+                const url = result.secure_url;
+                items.postItemwithdisc(
+                  title,
+                  description,
+                  url,
+                  price,
+                  discount,
+                  gender,
+                  stock,
+                  async (err, result) => {
+                    if (err) {
+                      res.send(err);
+                    }
+                    res.send("items added successfully");
+                  }
+                );
               }
             );
+          } catch (err) {
+            res.status(500).send(err);
           }
-        );
-      } catch (err) {
-        res.status(500).send(err);
-      }
+        }
+      });
     } else {
-      try {
-        const response = await cloudinar.uploader.upload(
-          image,
-          async function (error, result) {
-            if (error) {
-              res.send(error);
-            }
-            const url = result.secure_url;
-            items.postItemwithoutdisc(
-              title,
-              description,
-              url,
-              price,
-              gender,
-              async (err, result) => {
-                if (err) {
-                  res.send(err);
+      jwt.verify(req.token, process.env.JWT_SECRET_KEY, async (err) => {
+        if (err) {
+          res.send('not authenticated');
+        } else {
+          try {
+            const response = await cloudinar.uploader.upload(
+              image,
+              async function (error, result) {
+                if (error) {
+                  res.send(error);
                 }
-                res.send("items added successfully");
+                const url = result.secure_url;
+                items.postItemwithoutdisc(
+                  title,
+                  description,
+                  url,
+                  price,
+                  gender,
+                  stock,
+                  async (err, result) => {
+                    if (err) {
+                      res.send(err);
+                    }
+                    res.send("items added successfully");
+                  }
+                );
               }
             );
+          } catch (err) {
+            res.send(err);
           }
-        );
-      } catch (err) {
-        res.send(err);
-      }
+        }
+      });
+     
     }
   },
   getItems: function (req, res) {
@@ -83,43 +102,98 @@ module.exports = {
   },
   deleteItem: function (req, res) {
     const id = req.params.id;
-    items.deleteitem(id, (err, result) => {
+    jwt.verify(req.token, process.env.JWT_SECRET_KEY, async (err) => {
       if (err) {
-        return res.send(err);
+        res.send('not authenticated');
+      } else {
+        items.deleteitem(id, (err, result) => {
+          if (err) {
+            return res.send(err);
+          }
+          res.send("item deleted successfully");
+        });       
       }
-      res.send("item deleted successfully");
     });
+
   },
   updateItem: async function (req, res) {
     const id = req.params.id;
-    const { title, description, image, price, discount, gender } = req.body;
-    if (!title || !description || !image || !price) {
-      return res.status(500).send("fill all the field");
-    } else {
-      const response = await cloudinar.uploader.upload(
-        image,
-        async function (error, result) {
-          if (error) {
-            res.send(error);
-          }
-          const image = result.secure_url;
-          items.updateitem(
-            id,
-            title,
-            description,
-            image,
-            price,
-            discount,
-            gender,
-            (err, result) => {
-              if (err) {
-                res.send(err);
+    const { title, description, image, price, gender, discount ,stock} = req.body;
+    if (!title || !description || !image || !price || !gender || !stock) {
+      res.status(404).send("please fill all the fields");
+    }
+    if (discount) {
+      jwt.verify(req.token, process.env.JWT_SECRET_KEY, async (err) => {
+        if (err) {
+          res.send('not authenticated');
+        } else {
+          try {
+            const response = await cloudinar.uploader.upload(
+              image,
+              async function (error, result) {
+                if (error) {
+                  res.send(error);
+                }
+                const image = result.secure_url;
+                items.updateitem(
+                  id,
+                  title,
+                  description,
+                  image,
+                  price,
+                  discount,
+                  gender,
+                  stock,
+                  async (err, result) => {
+                    if (err) {
+                      res.send(err);
+                    }
+                    res.send("items updated successfully");
+                  }
+                );
               }
-              res.send("items updated successfully");
-            }
-          );
+            );
+          } catch (err) {
+            res.status(500).send(err);
+          }
         }
-      );
+      });
+    } else {
+      jwt.verify(req.token, process.env.JWT_SECRET_KEY, async (err) => {
+        if (err) {
+          res.send('not authenticated');
+        } else {
+          try {
+            const response = await cloudinar.uploader.upload(
+              image,
+              async function (error, result) {
+                if (error) {
+                  res.send(error);
+                }
+                const image = result.secure_url;
+                items.updateitemwithoutdisc(
+                  id,
+                  title,
+                  description,
+                  image,
+                  price,
+                  gender,
+                  stock,
+                  async (err, result) => {
+                    if (err) {
+                      res.send(err);
+                    }
+                    res.send("items updated successfully");
+                  }
+                );
+              }
+            );
+          } catch (err) {
+            res.send(err);
+          }
+        }
+      });
+     
     }
   },
   getMan: function (req, res) {
@@ -145,5 +219,16 @@ module.exports = {
       }
       res.send(result);
     });
+  },
+  verify: function (req, res, next) {
+    const bearerHeader = req.headers["authorization"];
+    if (typeof bearerHeader !== "undefined") {
+      const bearer = bearerHeader.split(" ");
+      const bearerToken = bearer[1];
+      req.token = bearerToken;
+      next();
+    } else {
+      res.sendStatus(403);
+    }
   },
 };
