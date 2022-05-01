@@ -13,10 +13,10 @@ module.exports = {
     if (!name || !location || !description || !image) {
       res.send("fill all the field");
     } else {
-      jwt.verify(req.token, process.env.JWT_SECRET_KEY, async (err) => {
-        if (err) {
-          res.send('not authenticated');
-        } else {
+      // jwt.verify(req.token, process.env.JWT_SECRET_KEY, async (err) => {
+      //   if (err) {
+      //     res.send('not authenticated');
+      //   } else {
           try {
             const response = await cloudinar.uploader.upload(
               image,
@@ -41,11 +41,8 @@ module.exports = {
               }
             );
           } catch (err) {
-            res.send(err);
+            res.send({err:"you have an error with the server"});
           }
-        }
-      });
-   
     }
   },
   getReviews: function (req, res) {

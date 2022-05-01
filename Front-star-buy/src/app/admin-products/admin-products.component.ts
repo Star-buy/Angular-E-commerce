@@ -18,7 +18,6 @@ export class AdminProductsComponent implements OnInit {
         console.log(data)
       })
   }
-
 }
 
 

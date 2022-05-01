@@ -6,9 +6,10 @@ import axios from 'axios'
   styleUrls: ['./review.component.css']
 })
 export class ReviewComponent implements OnInit {
-
-  constructor() { }
-
+ 
+  constructor() {
+  }
+  
   ngOnInit(): void {
   }
 

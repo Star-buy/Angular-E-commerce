@@ -35,38 +35,7 @@ loginUser(f:any){
   // console.log(password,"ss")
 // console.log(email,"aze")
 console.log(res)
-// if(res.data = "user not found"){
 
-// alert("User not found")
-// }
-// else 
-// if(res.data = "Please fill all the fields"){ 
-
-
-// }
-// else if(res.data == "wrong password"){
-//   alert ("Wrong password")
-
-
-// }
-// else if(res.data =="login failed"){
-
-
-// }
-// else if( res.data == "hi admin"){
-
-
-// }
-// else if(res.data == "login successful"){
-//   alert ("login successful")
-
-
-// }
-// else if(res.data =="not found"){
-
-
-
-// }
 
   })
   this.aus.loginUser(data).subscribe(data=>{
