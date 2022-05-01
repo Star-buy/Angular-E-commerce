@@ -23,7 +23,7 @@ export class ReviewComponent implements OnInit {
      }
     }
    }
-  onReviewPost(reviews: { name: string, location: string, description: string  ,image:String}) {
+  onReviewPost(reviews: { name: string, location: string, description: string }) {
     console.log(reviews);
     this.http.post("http://localhost:3000/postreview", reviews)
       .subscribe((res) => {
