@@ -1,71 +1,94 @@
 <div>
     <div>
-      <div class="side-menu">
-        <div class="brand-name">
-          <h1>Admin Side-Bar</h1>
-        </div>
-        <div class="img-case">
-          <img src="" alt="" class="imaget-t" />
-        </div>
-        <ul>
-          <li>
-            <img src="" alt="" />&nbsp;
-            <span>Dashboard</span>
-          </li>
-          <li>
-            <img src="" alt="" />&nbsp;
-            <a
-              href="#order"
-            
-              style="color: aliceblue"
-              >Add Product</a
-            >
-          </li>
-        </ul>
-      </div>
+    <div class="side-menu">
+    <div class="brand-name">
+    <h1>Admin Side-Bar</h1>
     </div>
+    <div class="img-case">
+    <img src="" alt="" class="imaget-t" />
+    </div>
+    <ul>
+    <li>
+    <img src="" alt="" />&nbsp;
+    <span>Dashboard</span>
+    </li>
+    <li>
+    <img src="" alt="" />&nbsp;
+    <a href="#order" style="color: aliceblue">Add Product</a>
+    </li>
+    </ul>
+    </div>
+    </div>
+
+    <pre>{{ products | json }}</pre>
+    <pre>{{ product| json }}</pre>
+
     <div class="continer">
-      <div class="left-le"></div>
-      <div class="right-re">
-        <h1 style="color: rgb(252 189 57)">Add Product</h1>
-        <br />
-        <div>
-          <p>Title</p>
-          <input type="text" name="title"  class="nwme-ne" placeholder="Product name..."/>
-          <p>Price</p>
-          <input type="text" name="desc"  class="nwme-ne" placeholder="Product Price..."/>
-  <p>discount</p>
-  
-                      <input type="text" placeholder='discount'  class="nwme-ne"  /><br/>
-  
-          <p>Description</p>
-  
-          <textarea type="text" name="desc"  style="width: 100%" placeholder="Product description...">
-          </textarea>
-  
-          <input />
-          <br />
-          <div >
-            <h2 class="textoo-o">Select your image</h2>
-            <input type="file" class="files" />
-            
-          </div>
-          
-          <div v-else>
-            <img :src="image" class="imaget-t" />
-          </div><br/>
-            <select  name="gender">
-      <option value="none" selected>Gender</option>
-      <option  value="male">Male</option>
-      <option  value="female">Female</option>
-      <option  value="kids">kids</option>
-  </select>
-          <button  class="btna">Add</button>
+        <div class="left-le"></div>
+        <div class="right-re">
+            <h1 style="color: rgb(252 189 57)">Add Product</h1>
+            <br />
+            <div>
+                <form action="" (submit)="createSubmit()" enctype="multipart/form-data">
+                    <p>Title</p>
+                    <input
+                        type="text"
+                        name="title"
+                        class="nwme-ne"
+                        placeholder="Product name..."
+                        [(ngModel)]="product.title"
+                        />
+                        <!-- 
+                        [(ngModel)]="product.title"
+                        [(ngModel)]="product.price"
+                        [(ngModel)]="product.description"
+                        [(ngModel)]="product.gender"
+                        (click)="addProduct()"
+                        -->
+                    <p>Price</p>
+                    <input
+                        type="text"
+                        name="price"
+                        class="nwme-ne"
+                        placeholder="Product Price..."
+                        [(ngModel)]="product.price"
+                    />
+                    <p>discount</p>
+                    <input [(ngModel)]="product.discount" name ="discount" type="number" placeholder="discount" class="discount" /><br />
+                    <p>Description</p>
+                    <textarea rows="4" cols="50"
+                        type="text"
+                        name="description"
+                        style="width: 100%"
+                        placeholder="Product description..."
+                        [(ngModel)]="product.description"
+                    >
+                    </textarea>
+                    <br />
+                    <div>
+                        <h2 class="textoo-o">Select your image</h2>
+                        <!-- <input 
+                         name="image"
+                         accept="image/png, image/jpeg, image/jpg"
+                         type="file" 
+                         class="files" 
+                         [(ngModel)]="product.image"
+                         /> -->
+                    </div>
+                    <div >
+                        <img [src]="product.image" class="imaget-t" />
+                    </div>
+                    <br />
+                    <select name="gender" [(ngModel)]="product.gender">
+                        <option value="none" selected>Gender</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="kids">kids</option>
+                    </select>
+                    <button class="btna">Add</button>
+                </form>
+            </div>
         </div>
-      </div>
-    </div>
-    </div>
+   </div>
+</div>
 
-
-
-   
