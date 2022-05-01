@@ -6,6 +6,11 @@
     overflow: hidden;
     padding: 20px 0;
   }
+  .image{
+    border-radius: 50%;
+    height: 250px;
+    width: 250px;
+  }
   .update-h1{
     font-style:italic
   }

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import axios from 'axios'
+import { FormGroup, FormControl, Validators} from '@angular/forms';
+
 
 @Component({
   selector: 'app-review',
@@ -7,27 +9,60 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./review.component.css']
 })
 export class ReviewComponent implements OnInit {
-  title = "AngularHttpRequest";
-  image=""
-  constructor(private http: HttpClient) {
+  constructor() {
   }
   
   ngOnInit(): void {
   }
-  onSelect(event:any){
-    if(event.target.files[0]){
-     let reader = new FileReader();
-     reader.readAsDataURL(event.target.files[0]);
-     reader.onload =(event:any)=>{
-       this.image =event.target.result;
-     }
-    }
-   }
-  onReviewPost(reviews: { name: string, location: string, description: string }) {
-    console.log(reviews);
-    this.http.post("http://localhost:3000/postreview", reviews)
-      .subscribe((res) => {
-        console.log(res);
-      })
+  
+
+  name =""
+  location=""
+  description=""
+  url:any="";
+
+    
+seletImage(event:any){
+let reader = new FileReader();
+reader.readAsDataURL(event.target.files[0])
+reader.onload = () =>{
+  this.url = reader.result
+ }
+}
+
+GetName(event:any){
+  this.name = event.target.value
+  
   }
+
+    GetLocation(event:any){
+      this.location = event.target.value
+      }
+      getDescription(event:any){
+        this.description = event.target.value
+        
+        }
+        
+        postReview(f:any){
+          let data=f.value
+
+         var name =this.name
+         var description =this.description
+         var location =this.location
+         var image = this.url
+        const data1 ={
+          name:name,
+          description:description,
+          location:location,
+          image:image
+        }
+         axios.post("http://localhost:3000/reviews/postreview",data1,
+         {headers:{'Authorization':`Bearer ${localStorage.getItem('token')}`}}
+         ).then(res=> { 
+         
+         console.log(res)
+
+       
+        })
+      }
 }

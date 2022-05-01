@@ -152,3 +152,8 @@
     margin: 44px auto;
     text-align: center;
   }
+  .image{
+    border-radius: 50%;
+    height: 250px;
+    width: 250px;
+  }

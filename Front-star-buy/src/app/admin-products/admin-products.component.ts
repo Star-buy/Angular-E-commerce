@@ -11,13 +11,18 @@ export class AdminProductsComponent implements OnInit {
   constructor(
     private userService: UsersService
  ) { }
+url:any=""
+title=""
+     
+seletImage(event:any){
+
+  }
+
+  getTitle(){
+
+    }
 
   ngOnInit(): void {
-    this.userService.getAllData()
-      .subscribe(data => {
-        console.log(data)
-      })
+    
   }
 }
-
-

@@ -71,13 +71,8 @@
       >
       </textarea>
       <br />
-      <div>
-        <h2 class="textoo-o">Select a product image</h2>
-        <input type="file"  class="files" />
-      </div>
-      <div >
-        <img src="image" class="imaget-t" />
-      </div>
+      <input name="image" type="file" required (change)="seletImage($event)"><br/>
+      <img class="image" *ngIf="url" [src]="url" alt="image" />
       <br />
     </div>
   </div>
