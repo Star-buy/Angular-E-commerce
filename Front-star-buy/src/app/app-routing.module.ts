@@ -5,7 +5,7 @@ import { PaymentComponent } from './payment/payment.component';
 import { SignupComponent } from './signup/signup.component';
 import { UnderNavComponent } from './underNav/underNav.component';
 import { CardComponent } from './card/card.component';
-import { NavbarComponent } from "./navbar/navbar.component"
+// import { NavbarComponent } from "./navbar/navbar.component"
 import { MaleComponent } from './male/male.component';
 import { FemaleComponent } from './female/female.component';
 import { KidsComponent } from './kids/kids.component';
@@ -15,8 +15,12 @@ import { AdminPartComponent } from './adminPart/adminPart.component';
 import { ReviewComponent } from './review/review.component';
 import {SigninComponent} from './signin/signin.component';
 // import { AccessoriesComponent } from './accessories/accessories.component';
-// import { ReviewListComponent } from './review-list/review-list.component';
 
+// import { AdminDataComponent } from './admin-data/admin-data.component';
+// import { CardComponent } from './card/card.component';
+import {NavbarComponent} from "./navbar/navbar.component"
+
+// import { ReviewListComponent } from './review-list/review-list.component';
 const routes: Routes = [
   {
     component: NavbarComponent, path: "",
@@ -42,6 +46,7 @@ const routes: Routes = [
   // {component:ReviewComponent,path:"review"},
   // {component:ReviewListComponent,path:"review-list"},
   // {component:AccessoriesComponent, path: "accessories"},
+  // {component:AdminDataComponent, path: "admin-data"},
   // {component:CardComponent, path: "card"},
 ]
 @NgModule({

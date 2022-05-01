@@ -1,67 +1,51 @@
+
+
 <div class="w3-main" style="margin-left:340px;margin-right:40px">
 
   <div class="w3-container" id="contact" style="margin-top:75px">
-      <h1 class="w3-xxxlarge w3-text-red"><b>signup</b></h1>
-      <hr style="width:50px;border:5px solid red" class="w3-round">
-      <form #f="ngForm" >
+      <h1 class="w3-xxxlarge w3-text-red"><b>Signup</b></h1>
+      
+      <form #f="ngForm"(ngSubmit)="addUser(f)" >
           <div class="w3-section">
-              <!-- <label>Username</label> -->
-              <!-- <input class="w3-input w3-border" type="text" name="username" ngModel #username="ngModel" required> -->
+             
+             </div> 
+             <div class="w3-section">
+              <label>User Name</label>
+              <input class="w3-input w3-border" type="userName" #password name="userName"  required (change)="GetuserName($event)">
             </div>
+
+
+            <div class="w3-section">
+              <label>confirm Password</label>
+              <input class="w3-input w3-border" type="confirmPassword" #password name="confirmPassword"  required (change)="GetconfirmPassword($event)">
+            </div>
+
+
+
         <div class="w3-section">
           <label>Email</label>
+         
           <input class="w3-input w3-border" type="email" #email name="email"  required (change)="GetEmail($event)">
+         
         </div>
         <div class="w3-section">
           <label>Password</label>
           <input class="w3-input w3-border" type="password" #password name="password"  required (change)="GetPassword($event)">
         </div>
-        <div class="w3-section">
-          <label>Confirm Password</label>
-          <input class="w3-input w3-border" type="email" #ConfirmPaswword name="ConfirmPaswword"  required (change)=" GetConfirmPassword($event)">
-        </div>
-        <!-- <div class="alert alert-danger" *ngIf="messageError">{{messageError}}</div> -->
+     
+       
         <button type="submit" (click)="addUser($event)" class="w3-button w3-block w3-padding-large w3-red w3-margin-bottom">Login</button>
        
-      
+       
       </form>  
       
     </div>
   
-  </div>
-<!-- <div class="conti">
-    <div class="left"></div>
-    <div class="right">
-    <h1 style="color:#b64b20">Registration</h1><br/>
-    <div>
-      <p>Fill your name</p>
-      <input type="text" placeholder="Your Name..." class="nwme" name="name"  >
-      <p>Email</p>
-      <input type="email" placeholder="@gmail.com" class="nwme" name="email" >
-      <p>Password</p>
-      <input type="password" placeholder="Your Password..." class="nwme" name="password" >
-      <p>Confirm Passwordd</p>
-      <input type="password" placeholder="Your Password..." class="nwme"><br/>
-    <select class="nwme"  name="gender" style="align-items: center">
-      <option value="none" selected>Gender</option>
-      <option value="male">Male</option>
-      <option value="female">Female</option>
-      <option value="kids">kids</option>
-    </select>
-          <div >
-            <h2 class="textoo">Select your image</h2>
-            <input type="file" class="files"/>
-          </div>
-          <div v-else>
-            <img src="https://www.cieau.com/wp-content/uploads/2019/11/eau_nature.jpg" class="imaget" />
-          </div>
-      <button  class="btna">registrer</button>
-    </div>
-    <span class="span-span"
-                >login
-                <button  href="" class="a-a" 
-                  >login</button
-                ></span
-              >
-    </div>
-  </div> -->
+  </div> 
+
+
+
+
+
+
+

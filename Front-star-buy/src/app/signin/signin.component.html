@@ -1,16 +1,17 @@
 <div class="w3-main" style="margin-left:340px;margin-right:40px">
 
   <div class="w3-container" id="contact" style="margin-top:75px">
-      <h1 class="w3-xxxlarge w3-text-red"><b>signin</b></h1>
-      <hr style="width:50px;border:5px solid red" class="w3-round">
-      <form #f="ngForm" >
+      <h1 class="w3-xxxlarge w3-text-red"><b>Login</b></h1>
+      
+      <form #f="ngForm"(ngSubmit)="loginUser(f)" >
           <div class="w3-section">
-              <!-- <label>Username</label> -->
-              <!-- <input class="w3-input w3-border" type="text" name="username" ngModel #username="ngModel" required> -->
-            </div>
+              
+             </div> 
         <div class="w3-section">
           <label>Email</label>
+         
           <input class="w3-input w3-border" type="email" #email name="email"  required (change)="GetEmail($event)">
+         
         </div>
         <div class="w3-section">
           <label>Password</label>
@@ -23,19 +24,14 @@
                   >Sign up</a
                 ></span>
         </div>
-        <!-- <div class="alert alert-danger" *ngIf="messageError">{{messageError}}</div> -->
+       
         <button type="submit" (click)="loginUser($event)" class="w3-button w3-block w3-padding-large w3-red w3-margin-bottom">Login</button>
        
-      
+       
       </form>  
       
     </div>
   
-  </div>
+  </div> 
 
 
-  <!-- <span class="span-span"
-                >Don't have an account?
-                <router-link href="" class="a-a" to="/Signup"
-                  >Sign up</router-link
-                ></span -->
