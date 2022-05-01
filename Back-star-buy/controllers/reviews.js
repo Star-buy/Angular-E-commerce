@@ -8,14 +8,14 @@ require("dotenv").config();
 
 module.exports = {
   postReview: async function (req, res) {
-    const { name, location, description, image } = req.body;
+    const { name, location, description,image} = req.body;
     if (!name || !location || !description || !image) {
-      res.status(500).send("fill all the field");
+      res.send("fill all the field");
     } else {
-      jwt.verify(req.token, process.env.JWT_SECRET_KEY, async (err) => {
-        if (err) {
-          res.send('not authenticated');
-        } else {
+       jwt.verify(req.token, process.env.JWT_SECRET_KEY, async (err) => {
+         if (err) {
+           res.send('not authenticated');
+         } else {
           try {
             const response = await cloudinar.uploader.upload(
               image,
@@ -33,24 +33,22 @@ module.exports = {
                       if (err) {
                         res.send(err);
                       }
-                      return res.status(200).send(" your review matter");
+                      return res.send(" your review matter");
                     }
                   );
                 }
               }
             );
           } catch (err) {
-            res.send(err);
+            res.send({err:"you have an error with the server"});
           }
-        }
-      });
-   
-    }
-  },
+       }
+  })
+  }},
   getReviews: function (req, res) {
    reviews.getReview((err, result)=>{
       if(err){res.send(err)} 
-      res.status(200).send(result) 
+      res.send(result) 
     })
   },
   deleteReview: function (req, res) {
@@ -73,7 +71,7 @@ module.exports = {
     const id = req.params.id;
     const { name, location,description, image} = req.body;
     if (!name || !location || !description || !image) {
-      return res.status(500).send("fill all the field");
+      return res.send("fill all the field");
     } else {
       jwt.verify(req.token, process.env.JWT_SECRET_KEY, async (err) => {
         if (err) {

@@ -11,6 +11,17 @@ export class AdminDataComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  url:any="url"
+
+
+      
+seletImage(event:any){
+  let reader = new FileReader();
+  reader.readAsDataURL(event.target.files[0])
+  reader.onload = () =>{
+    this.url = reader.result
+   }
+  }
 
 }
 

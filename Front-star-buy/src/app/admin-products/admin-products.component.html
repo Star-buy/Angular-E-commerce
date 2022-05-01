@@ -31,7 +31,7 @@
         <br />
         <div>
           <p>Title</p>
-          <input type="text" name="title"  class="nwme-ne" placeholder="Product name..."/>
+          <input type="text" #name name="title"   required (change)= "getTitle($event) " class="nwme-ne" placeholder="Product name..."/>
           <p>Price</p>
           <input type="text" name="desc"  class="nwme-ne" placeholder="Product Price..."/>
   <p>discount</p>
@@ -40,20 +40,12 @@
   
           <p>Description</p>
   
-          <textarea type="text" name="desc"  style="width: 100%" placeholder="Product description...">
+          <textarea type="text" name="desc" class="nwme-ne" placeholder="Product description...">
           </textarea>
-  
-          <input />
           <br />
-          <div >
-            <h2 class="textoo-o">Select your image</h2>
-            <input type="file" class="files" />
-            
-          </div>
-          
-          <div v-else>
-            <img :src="image" class="imaget-t" />
-          </div><br/>
+          <p>Stock</p>
+          <input class="nwme-ne" placeholder="stock..." type="number"/>
+          <br/>
             <select  name="gender">
       <option value="none" selected>Gender</option>
       <option  value="male">Male</option>
@@ -61,6 +53,9 @@
       <option  value="kids">kids</option>
   </select>
           <button  class="btna">Add</button>
+          <input name="image" type="file" required (change)="seletImage($event)"><br/>
+          <img class="image" *ngIf="url" [src]="url" alt="image" />
+        
         </div>
       </div>
     </div>

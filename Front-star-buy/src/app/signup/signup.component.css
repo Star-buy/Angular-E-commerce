@@ -17,6 +17,11 @@
     border-bottom-left-radius: 10px;
     
   }
+  .image{
+    border-radius: 50%;
+    height: 250px;
+    width: 250px;
+  }
   .right {
     width: 50%;
     height: 650px;
