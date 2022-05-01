@@ -18,29 +18,29 @@ module.exports = {
     const { email, password, confirmPassword, username, image } = req.body;
     if (image) {
       if (!email || !password || !username || !confirmPassword) {
-        res.status(500).send("fill all the field");
+        res.send("fill all the field");
       } else {
         if (confirmPassword !== password) {
-          res.status(500).send("please confirm your password");
+          res.send("please confirm your password");
         } else {
           users.getAllNames(username, async (err, result) => {
             if (err) {
-              res.status(400).send(err);
+              res.send(err);
             } else if (result.length > 0) {
-              res.status(400).send("this user name exist");
+              res.send("this user name exist");
             } else {
               users.getAllEmails(email, async (err, result) => {
                 if (err) {
-                  res.status(400).send(err);
+                  res.send(err);
                 } else if (result.length > 0) {
-                  res.status(400).send("this email name exist");
+                  res.send("this email exist");
                 } else {
                   try {
                     const response = await cloudinar.uploader.upload(
                       image,
                       async function (error, result) {
                         if (error) {
-                          res.status(400).send(error);
+                          res.send(error);
                         } else {
                           const url = result.secure_url;
                           const salt = await bcrypt.genSalt();
@@ -66,7 +66,7 @@ module.exports = {
                       }
                     );
                   } catch {
-                    res.status(500);
+                    res.send("somthing went wrong");
                   }
                 }
               });
@@ -76,22 +76,22 @@ module.exports = {
       }
     } else {
       if (!email || !password || !username || !confirmPassword) {
-        res.status(500).send("fill all the field");
+        res.send("fill all the field");
       } else {
         if (confirmPassword != password) {
-          res.status(500).send("please confirm your password");
+          res.send("please confirm your password");
         } else {
           users.getAllNames(username, async (err, result) => {
             if (err) {
-              res.status(400).send(err);
+              res.send(err);
             } else if (result.length > 0) {
-              res.status(400).send("this user name exist");
+              res.send("this user name exist");
             } else {
               users.getAllEmails(email, async (err, result) => {
                 if (err) {
-                  res.status(400).send(err);
+                  res.send(err);
                 } else if (result.length > 0) {
-                  res.status(400).send("this email name exist");
+                  res.send("this email exist");
                 } else {
                   try {
                     const salt = await bcrypt.genSalt();
@@ -110,7 +110,7 @@ module.exports = {
                       }
                     );
                   } catch {
-                    res.status(500);
+                    res.send("something went wrong");
                   }
                 }
               });
@@ -123,19 +123,19 @@ module.exports = {
   loginUser: function (req, res) {
     const { email, password } = req.body;
     if (!email || !password) {
-      return res.status(500).send("Please fill all the fields");
+      return res.send("Please fill all the fields");
     } else {
       users.getAllEmails(email, (err, result) => {
         if (err) {
-          return res.status(500).send(err);
+          return res.send(err);
         } else if (!result.length) {
-          return res.status(500).send("user not found");
+          return res.send("user not found");
         } else {
           users.getPasswordByEmail(email, (err, result) => {
             if (err) {
-              return res.status(500).send(err);
+              return res.send(err);
             } else if (!result.length) {
-              return res.status(500).send("wrong password");
+              return res.send("wrong password");
             } else if (result) {
               try {
                 bcrypt.compare(
@@ -200,22 +200,22 @@ module.exports = {
   signupAdmin: async function (req, res) {
     const { email, password, confirmPassword, username, role } = req.body;
     if (!email || !password || !confirmPassword || !username || !role) {
-      res.status(500).send("fill all the field");
+      res.send("fill all the field");
     } else {
       if (confirmPassword != password) {
-        return res.status(500).send("confirm your password");
+        return res.send("confirm your password");
       }
       users.getAllNames(username, async (err, result) => {
         if (err) {
-          res.status(500).send(err);
+          res.send(err);
         } else if (result.length > 0) {
-          return res.status(400).send("username already exist");
+          return res.send("username already exist");
         } else {
           users.getAllEmails(email, async (err, result) => {
             if (err) {
-              res.status(500).send(err);
+              res.send(err);
             } else if (result.length > 0) {
-              return res.status(400).send("email already exist");
+              return res.send("email already exist");
             } else {
               const salt = await bcrypt.genSalt();
               const hashedPassword = await bcrypt.hash(password, salt);
@@ -225,9 +225,9 @@ module.exports = {
                 hashedPassword,
                 role,
                 (err, result) => {
-                  if (err) res.status(500).send(err);
+                  if (err) res.send(err);
                   else {
-                    res.status(200).send("signup successfully ");
+                    res.send("signup successfully ");
                   }
                 }
               );

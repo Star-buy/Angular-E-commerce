@@ -10,7 +10,7 @@ module.exports = {
   postItem: async function (req, res) {
     const { title, description, image, price, gender, discount ,stock} = req.body;
     if (!title || !description || !image || !price || !gender || !stock) {
-      res.status(404).send("please fill all the fields");
+      res.send("please fill all the fields");
     }
     else if (discount) {
       jwt.verify(req.token, process.env.JWT_SECRET_KEY, async (err) => {
@@ -43,7 +43,7 @@ module.exports = {
               }
             );
           } catch (err) {
-            res.status(500).send(err);
+            res.send(err);
           }
         }
       });
@@ -112,7 +112,7 @@ module.exports = {
     const id = req.params.id;
     const { title, description, image, price, gender, discount ,stock} = req.body;
     if (!title || !description || !image || !price || !gender || !stock) {
-      res.status(404).send("please fill all the fields");
+      res.send("please fill all the fields");
     }
     if (discount) {
       jwt.verify(req.token, process.env.JWT_SECRET_KEY, async (err) => {
@@ -146,7 +146,7 @@ module.exports = {
               }
             );
           } catch (err) {
-            res.status(500).send(err);
+            res.send(err);
           }
         }
       });
