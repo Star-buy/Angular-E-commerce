@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
@@ -24,6 +24,8 @@ import { AdminPartComponent } from './adminPart/adminPart.component';
 import { ReviewListComponent } from './review-list/review-list.component';
 import { SigninComponent } from './signin/signin.component';
 import { SignupComponent } from './signup/signup.component';
+
+import { CarousselComponent } from './caroussel/caroussel.component';
 // import { ServicesComponent } from './services/AuthuserService';
 
 @NgModule({
@@ -43,6 +45,7 @@ import { SignupComponent } from './signup/signup.component';
     ReviewListComponent,
     SigninComponent,
     SignupComponent,
+    CarousselComponent
     // ServicesComponent,
   ],
   imports: [
@@ -50,7 +53,9 @@ import { SignupComponent } from './signup/signup.component';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgbModule,
+    
 
   ],
   providers: [],
