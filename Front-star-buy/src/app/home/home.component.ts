@@ -14,45 +14,50 @@ export class HomeComponent implements OnInit {
   images = [
     {
       imageSrc:
-        'https://d1csarkz8obe9u.cloudfront.net/posterpreviews/super-weekend-discount-sale-promo-special-ad-design-template-8534c64327a8a8a2a5e7ad15f12a340b.jpg?ts=1569260406',
-      imageAlt: 'nature1',
+        'https://reviewed-com-res.cloudinary.com/image/fetch/s--X7McMIEN--/b_white,c_limit,cs_srgb,f_auto,fl_progressive.strip_profile,g_center,q_auto,w_972/https://reviewed-production.s3.amazonaws.com/1565980733817/btswardrobe.jpg',
+      imageAlt: 'clothing1',
     },
     {
       imageSrc:
-        'https://www.paydollar.com.cn/en/images/creditcard-img1-china.jpg',
-      imageAlt: 'nature2',
+        'https://static.fibre2fashion.com/articleresources/images/76/7511/e-commerce-big.jpg',
+      imageAlt: 'clothing2',
     },
     {
       imageSrc:
-        'https://www-cdn.bigcommerce.com/assets/06-ValProp4.jpg',
+        'https://static.fibre2fashion.com/articleresources/images/47/4642/the-teen-power-teen-models-for-apparel-brand-building.jpg',
       imageAlt: 'person1',
     },
     {
       imageSrc:
-        'https://www-cdn.bigcommerce.com/assets/04-ValProp2.jpg',
+        'https://static.fibre2fashion.com/articleresources/images/73/7232/The_Teen_Apparel_Market_big.jpg',
       imageAlt: 'person2',
     },
+    {
+      imageSrc:
+        'https://reviewed-com-res.cloudinary.com/image/fetch/s--lzcYa-Hb--/b_white,c_limit,cs_srgb,f_auto,fl_progressive.strip_profile,g_center,q_auto,w_792/https://reviewed-production.s3.amazonaws.com/attachment/0c94514e5cd34ddd/madewelleverlane.jpg',
+      imageAlt: 'person3',
+    },
+    {
+      imageSrc:
+        'https://media.kohlsimg.com/is/image/kohls/109088--vn-new',
+      imageAlt: 'person4',
+    },
+    {
+      imageSrc:
+        'https://img.mensxp.com/media/content/2016/Dec/best-online-shopping-sites-for-men-980x457-1481709884.jpg',
+      imageAlt: 'person5',
+    },
+    {
+      imageSrc:
+        'https://lerablog.org/wp-content/uploads/2017/12/gegertgr.jpg',
+      imageAlt: 'person6',
+    },
+    {
+      imageSrc:
+        'https://articlesdir.org/wp-content/uploads/2021/02/best-men-online-shopping-jcrew-luxe-digital.jpg',
+      imageAlt: 'person7',
+    },
+    
   ]
-  photos = [
-    {
-      imageSr:
-        'https://d1csarkz8obe9u.cloudfront.net/posterpreviews/super-weekend-discount-sale-promo-special-ad-design-template-8534c64327a8a8a2a5e7ad15f12a340b.jpg?ts=1569260406',
-      imageAl: 'nature1',
-    },
-    {
-      imageSr:
-        'https://www.paydollar.com.cn/en/images/creditcard-img1-china.jpg',
-      imageAl: 'nature2',
-    },
-    {
-      imageSr:
-        'https://www-cdn.bigcommerce.com/assets/06-ValProp4.jpg',
-      imageAl: 'person1',
-    },
-    {
-      imageSr:
-        'https://www-cdn.bigcommerce.com/assets/04-ValProp2.jpg',
-      imageAl: 'person2',
-    },
-  ]
+  
 }

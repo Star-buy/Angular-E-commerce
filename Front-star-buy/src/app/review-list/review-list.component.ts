@@ -5,11 +5,13 @@ import { UsersService } from '../users.service';
   templateUrl: './review-list.component.html',
   styleUrls: ['./review-list.component.css']
 })
+
 export class ReviewListComponent implements OnInit {
   reviewdata: any;
   constructor(private userService: UsersService) {
     this.getAllReviews()
   }
+  
   ngOnInit(): void {
     this.getAllReviews()
   }

@@ -1,14 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 
-
-
 interface carousselImage{
   imageSrc:string,
   imageAlt:string
-}
-interface carousselPhotos{
-  imageSr:string,
-  imageAl:string
 }
 
 @Component({
@@ -36,6 +30,7 @@ export class CarousselComponent implements OnInit {
     }
   }
   //changing of the image every 3 sec
+  // for some reason the autoslide didnt work i spend a lot of time working on it and didnt get why:(
   autoSlideImages(){
     setTimeout(()=>{
       this.onNextClick
@@ -62,45 +57,4 @@ export class CarousselComponent implements OnInit {
    }
   }
 
-
-
-  //second caroussel 
-  @Input() photos:carousselPhotos[]=[]
-  @Input() indicato = true;
-  @Input() control=true;
-  @Input() autoSlid=true;
-  @Input() slideInterva = 3000 ;
-  selectedInde=0;
-
-  ngOnInite(): void {
-    if(this.autoSlid){
-      this.autoSlidePhotos();
-    }
-  }
-  //changing of the image every 3 sec
-  autoSlidePhotos(){
-    setTimeout(()=>{
-      this.onNextClic
-    },this.slideInterva)
-
-  }
-  // by this we sets index of image on dot/indicator click
-  selectPhoto(index:number):void{
-   this.selectedInde=index;
-  }
-  onPrevClic() :void{
-    if(this.selectedInde===0){
-      this.selectedInde=this.photos.length-1;
-
-    }else{
-      this.selectedInde--
-    }
-  }
-  onNextClic() :void{
-   if(this.selectedInde ===this.photos.length-1){
-     this.selectedInde =0;
-   }else{
-     this.selectedInde++;
-   }
-  }
 }
