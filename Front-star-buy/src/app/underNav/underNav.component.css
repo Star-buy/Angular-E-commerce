@@ -1,91 +1,67 @@
-.tapnavv {
-    margin-top: 26px;
-    left: 0;
-    width: 100%;
-    background-color: #bcbfe4;
-    z-index: 9;
-    left: 0;
-    right: 0;
-    z-index: 1000;
-    padding-bottom:0.5px ;
-    
-  }
-  .tapi {
-    top: 10px;
-    padding: 10px 10vw;
-    display: flex;
-    justify-content: space-between;
-  }
-  .brandis {
-    height: 127px;
-  }
-  .nav-ii {
-    display: flex;
-    align-items: center;
-  }
-  .sear {
-    width: 500px;
-    display: flex;
-  }
-  .search-b {
-    width: 75%;
-    height: 8px;
-    padding: 24px;
-    border-top-left-radius: 15px;
-    border: 1px solid #000000;
-    text-transform: capitalize;
-    font-size: x-large;
-    background: none;
-    color: #181925;
-    outline: none;
-  }
-  .search-bt {
-    width: 20%;
-    height: 50px;
-    padding: 10px 20px;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    background: #181925;
-    color: #fff;
-    text-transform: capitalize;
-    font-size: 15px;
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
-  }
-  .nav-ii a {
-    margin-left: 20px;
-  }
-  .nav-ii a img {
-    width: 30px;
-  }
-  .lin-container {
-    width: 78%;
-    display: flex;
-    padding: 10px 10vw;
-    justify-content: center;
-    list-style: none;
-    border-top: 1px solid #d1d1d1;
-  }
-  .li {
-    padding: 8px 16px;
-    margin: 11px 0px;
-    font-size: 22px;
-    text-decoration: none;
-    color: #000000;
-    opacity: 14.5;
-    transition: 0.5s;
-  }
-  .li:hover {
-    color: red;
-    opacity: 1;
-  }
-  .hero-section {
-    width: 111%;
-    height: calc(100vh - 120px);
-    background-image: url("/images/cart_8.jpg");
-    background-size: cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+body{
+  margin: 0;
+  padding: 0;
+}
+.header{
+  height: 25vh;
+  background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),url(https://www.maxpixel.net/static/photo/1x/Banner-Background-Social-Media-Cover-Cover-6617550.png);
+  background-size: cover;
+  background-position:center ;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.search{
+  height: 50px;
+  padding: 10px;
+  border: none;
+  border-radius: 25px;
+  outline: none;
+  width: 400px;
+}
+.search-btn{
+  height: 50px;
+  width: 150px;
+  background: #ecac62;
+  border: none;
+  color: black;
+  border-radius: 25px;
+}
+.search-btn:hover{
+  background: #ffc107;
+  cursor: pointer;
+}
+.lin-container {
+  width: 78%;
+  display: flex;
+  padding: 10px 10vw;
+  justify-content: center;
+  list-style: none;
+  border-top: 1px solid #d1d1d1;
+}
+.li {
+  padding: 8px 16px;
+  margin: 11px 0px;
+  font-size: 30px;
+  text-decoration: none;
+  color: #ffffff;
+  opacity: 14.5;
+  transition: 0.5s;
+}
+.li:hover {
+  color: red;
+  opacity: 1;
+}
+.imaget {
+  width: 1%;
+  border-radius: 50%;
+  width: 3cm;
+  height: 3cm;
+}
+.h1{
+  color: #ffffff;
+  font-size: 45px;
+  letter-spacing: 2px;
+  font-style: oblique;
+}

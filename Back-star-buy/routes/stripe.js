@@ -1,8 +1,8 @@
 const express = require("express");
 const router = express.Router();
 
-const { payitem } = require("../controllers/stripe");
+const { payitem ,verify} = require("../controllers/stripe");
 
-router.post("/payitem", payitem);
+router.post("/payitem",verify, payitem);
 
 module.exports = router;

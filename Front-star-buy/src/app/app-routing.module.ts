@@ -14,7 +14,14 @@ import { AdminProductsComponent } from './admin-products/admin-products.componen
 import { AdminPartComponent } from './adminPart/adminPart.component';
 import { ReviewComponent } from './review/review.component';
 import {SigninComponent} from './signin/signin.component';
+import {CarousselComponent} from "./caroussel/caroussel.component"
 // import { AccessoriesComponent } from './accessories/accessories.component';
+
+// import { ReviewListComponent } from './review-list/review-list.component';
+
+
+// import { AdminDataComponent } from './admin-data/admin-data.component';
+// import { CardComponent } from './card/card.component';
 // import { ReviewListComponent } from './review-list/review-list.component';
 
 const routes: Routes = [
@@ -23,9 +30,9 @@ const routes: Routes = [
     children: [
       { component: SigninComponent, path: "signin" },
       { component: UnderNavComponent, path: "underNav" },
-      { component: HomeComponent, path: "home" },
+      { component: HomeComponent, path: "home"},
       { component:ReviewComponent,path:"review"},
-      { component:SignupComponent, path: "signup" },
+      // { component:SignupComponent, path: "signup" },
     ]
   },
   { component: PaymentComponent, path: "payment" },
@@ -36,7 +43,7 @@ const routes: Routes = [
   { component: AdminPartComponent, path: "admin"} ,
   { component: AdminProductsComponent, path: "admin-products" },
   { component: SignupComponent, path: "signup" },
-  // {component:SigninComponent, path:"signin"},
+  {component:SigninComponent, path:"signin"},
   // {component:SignupComponent, path:"signup"},
   // {component:UnderNavComponent, path:"underNavComponent"},
   // {component:ReviewComponent,path:"review"},

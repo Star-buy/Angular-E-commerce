@@ -1,16 +1,16 @@
-<p>navbar works!</p>
-<div>
-    <header>
-      <a href="#" class="logo" ><i class="fas fa-utensils"></i>Star-buy</a>
+<body>
+  <header>
+    <h1 style="color: #b2341e">Star-Buy</h1>
+    <nav>
+      <ul class="nav_links">
+       <li><a href="#" class="font" routerLink="/home" >Home</a></li>
+       <li><a href="#" class="font" routerLink="/underNav">Products</a></li>
+       <li><a href="#" class="font" routerLink="/review">Review</a></li>
+      </ul>
+    </nav>
+    <a class="cta" href="#" ></a>
+</header>
+</body>
 
-      <div id="menu-bar" class="fas fa-bars"></div>
+<router-outlet></router-outlet>
 
-      <nav class="navbar">
-        <a class="nav-link" routerLink="/home">Home</a>
-        <a class="nav-link" routerLink="/underNav">Products</a>
-        <a class="nav-link" routerLink="/review">Review</a>
-        <a href="#order" routerLink="/signin">Login</a>
-      </nav>
-    </header>
-  </div>
-  <router-outlet></router-outlet>
