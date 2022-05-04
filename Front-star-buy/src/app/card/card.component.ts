@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {map} from 'rxjs/operators';
 import axios from 'axios'
 @Component({
   selector: 'app-card',
