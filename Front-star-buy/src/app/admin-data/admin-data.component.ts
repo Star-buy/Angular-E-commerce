@@ -25,6 +25,7 @@ export class AdminDataComponent implements OnInit {
       },
       (error)=>{ console.log(error)}
       );
+
     }
   url:any="url"
 
