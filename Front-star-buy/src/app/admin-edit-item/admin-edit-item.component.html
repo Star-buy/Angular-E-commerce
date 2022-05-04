@@ -1,0 +1,56 @@
+<div>
+ 
+
+    <!-- <pre>{{ products | json }}</pre> -->
+
+    <h1 style="text-align: center" class="update-h1">Update The Product</h1>
+    <div class="omar">
+      <p class="string">Title</p>
+      <input
+        type="text"
+        name="title"
+     
+        class="nwme-me"
+        placeholder="Product name..."
+      />
+      <p class="string">Price</p>
+      <input
+        type="text"
+        name="desc"
+       
+        class="nwme-me"
+        placeholder="Product Price..."
+      />
+      <p class="string">discount</p>
+      <input
+        type="text"
+        placeholder="discount"
+        class="nwme-me"
+       
+      /><br />
+      <p class="string">Select Gender</p><br/>
+      <select class="nwme-me"  name="gender" style="align-items: center">
+        <option value="none" selected>Gender</option>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+        <option value="kids">kids</option>
+      </select>
+      <p class="string">Description</p><br/>
+      <textarea
+        type="text"
+        name="desc"
+      
+        class="nwme-me"
+        placeholder="Product description...."
+      >
+      </textarea>
+      <br />
+      <input name="image" type="file" required (change)="seletImage($event)"><br/>
+      <img class="image" *ngIf="url" [src]="url" alt="image" />
+      <br />
+    </div>
+  </div>
+
+
+
+ 
