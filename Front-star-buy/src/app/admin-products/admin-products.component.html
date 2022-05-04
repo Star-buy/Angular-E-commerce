@@ -1,9 +1,73 @@
-<div>
-  <h1>
-    heloo
-    <br />
-    <br /><br /><br />
-    <h1>hello</h1>
-  </h1>
+<div class="container">
+
+
+    <!-- <pre>{{ products | json }}</pre> -->
+    <pre>{{ product| json }}</pre>
+
+    <div class="continer">
+        <div class="left-le"></div>
+        <div class="right-re">
+            <h1 style="color: rgb(252 189 57)">Add Product</h1>
+            <br />
+            <div>
+                <form action="" (submit)="createSubmit()" enctype="multipart/form-data">
+                    <label class="form-label">Title</label>
+                    <input
+                        type="text"
+                        name="title"
+                        class="form-control"
+                        placeholder="Product name..."
+                        [(ngModel)]="product.title"
+                        />
+                        <!-- 
+                        [(ngModel)]="product.title"
+                        [(ngModel)]="product.price"
+                        [(ngModel)]="product.description"
+                        [(ngModel)]="product.gender"
+                        (click)="addProduct()"
+                        -->
+                    <p>Price</p>
+                    <input
+                        type="text"
+                        name="price"
+                        class="form-control"
+                        placeholder="Product Price..."
+                        [(ngModel)]="product.price"
+                    />
+                    <p>discount</p>
+                    <input
+                    [(ngModel)]="product.discount" 
+                    name ="discount" type="number" 
+                    placeholder="discount" 
+                    class="form-control" />
+              
+                    <p>Description</p>
+                    <textarea rows="4" cols="50" class="form-control"
+                        type="text"
+                        name="description"
+                        style="width: 100%"
+                        placeholder="Product description..."
+                        [(ngModel)]="product.description"
+                    >
+                    </textarea>
+                    <br />
+                    <div>
+                        <label for="formFileLg" class="form-label">Large file input example</label>
+                        <input class="form-control form-control-lg" id="formFileLg" type="file">
+                      </div>
+                    <div >
+ 
+                    </div>
+                    <br />
+                    <select name="gender" [(ngModel)]="product.gender" class="form-select" aria-label="Default select example">
+                        <option value="none" selected>Gender</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="kids">kids</option>
+                    </select>
+                    <button class="btn btn-primary">Add</button>
+                </form>
+            </div>
+        </div>
+   </div>
 </div>
-<router-outlet></router-outlet>
