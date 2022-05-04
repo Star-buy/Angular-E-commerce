@@ -20,22 +20,6 @@ export class AdminProductsComponent implements OnInit {
 
   
   constructor(
-    private userService: UsersService
- ) { }
-url:any=""
-title=""
-     
-seletImage(event:any){
-  let reader = new FileReader();
-  reader.readAsDataURL(event.target.files[0])
-  reader.onload = () =>{
-    this.url = reader.result
-   }
-  }
-
-  getTitle(event:any){
-    this.title = event.target.value 
-    }
     private userService: UsersService,
     private http: HttpClient,
     private router: Router
@@ -53,6 +37,18 @@ seletImage(event:any){
       );
     }
 
+    url = "../assets";
+    onselectFile(e:any){
+          if(e.target.files){
+            var reader = new FileReader();
+            reader.readAsDataURL(e.target.files[0]);
+            reader.onload = (event:any) => {
+              this.url = e.target.result;
+            }
+          }
+    };
+
+    
     createSubmit(){
       this.userService.addProduct(this.product)
       .subscribe(data => {
@@ -62,8 +58,6 @@ seletImage(event:any){
       }, error => { console.log(error);})     
       //console.log(this.product);
     }
-      })
-  }
 }
 
 

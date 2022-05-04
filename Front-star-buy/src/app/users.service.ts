@@ -36,6 +36,6 @@ export class UsersService {
 
   /////////////////********Review-List********//////////////////////
   getAllReviews():Observable<any>{
-    return this.http.get(`${this.baseURL}getreview`)
+    return this.http.get(`${this.baseURL}reviews/getreview`)
   }
 }
