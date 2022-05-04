@@ -1,6 +1,6 @@
 .conti {
-    width: 900px;
-    height: 700px;
+    width: 1500px;
+    height: 1200px;
     margin: 93px auto;
     box-sizing:border-box;
     background-color: #181925;
@@ -9,7 +9,7 @@
   }
   .left {
     width: 50%;
-    height: 650px;
+    height: 1000px;
     float: left;
     background: url("https://www.forbes.com/advisor/wp-content/uploads/2021/04/featured-image-pack-clothes.jpeg.jpg");
     background-size: cover;
@@ -24,7 +24,7 @@
   }
   .right {
     width: 50%;
-    height: 650px;
+    height: 1000px;
     float: left;
     background: #f7f7f7;
     border-top-right-radius: 10px;

@@ -1,4 +1,4 @@
-/* 
+
 .h1-h1 {
     letter-spacing: -1px;
   }
@@ -145,13 +145,9 @@
       rgba(60, 66, 87, 0.16) 0px 0px 0px 1px, rgba(0, 0, 0, 0) 0px 0px 0px 0px,
       rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px;
   }
-  .input-input[type="submit"] {
+  .input-input {
     background-color: #ff621e;
-    box-shadow: rgb(0 0 0 / 0%) 0px 0px 0px 0px, rgb(0 0 0 / 0%) 0px 0px 0px 0px,
-      rgb(0 0 0 / 12%) 0px 1px 1px 0px, #131313 0px 0px 0px 1px,
-      rgb(0 0 0 / 0%) 0px 0px 0px 0px, #0f69d6 0px 0px 0px 0px,
-      rgb(60 66 87 / 8%) 0px 2px 5px 0px;
-    color: #fff;
+   
     font-weight: 600;
     cursor: pointer;
   }
@@ -213,4 +209,4 @@
   }
   .namedata{
   text-align:center
-  } */
+  } 
