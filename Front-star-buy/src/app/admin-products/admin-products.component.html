@@ -77,6 +77,7 @@
                     </div>
                     <div >
                         <img [src]="product.image" class="imaget-t" />
+                        <input type="file" (change)="onselectFile($event)" name="image" id="">  
                     </div>
                     <br />
                     <select name="gender" [(ngModel)]="product.gender">

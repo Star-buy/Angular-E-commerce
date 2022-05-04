@@ -37,6 +37,18 @@ export class AdminProductsComponent implements OnInit {
       );
     }
 
+    url = "../assets";
+    onselectFile(e:any){
+          if(e.target.files){
+            var reader = new FileReader();
+            reader.readAsDataURL(e.target.files[0]);
+            reader.onload = (event:any) => {
+              this.url = e.target.result;
+            }
+          }
+    };
+
+    
     createSubmit(){
       this.userService.addProduct(this.product)
       .subscribe(data => {
