@@ -32,6 +32,8 @@ const routes: Routes = [
       { component: UnderNavComponent, path: "underNav" },
       { component: HomeComponent, path: "home"},
       { component:ReviewComponent,path:"review"},
+      { component: SignupComponent, path: "signup" },
+      {component:SigninComponent, path:"signin"},
       // { component:SignupComponent, path: "signup" },
     ]
   },
@@ -42,8 +44,7 @@ const routes: Routes = [
   { component: AdminDataComponent, path: "admin-data" },  
   { component: AdminPartComponent, path: "admin"} ,
   { component: AdminProductsComponent, path: "admin-products" },
-  { component: SignupComponent, path: "signup" },
-  {component:SigninComponent, path:"signin"},
+ 
   // {component:SignupComponent, path:"signup"},
   // {component:UnderNavComponent, path:"underNavComponent"},
   // {component:ReviewComponent,path:"review"},

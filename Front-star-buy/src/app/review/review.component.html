@@ -71,15 +71,15 @@
                 </form>
               </div>
             </div>
-            <label class="pass" for="image">ADD YOUR IMAGE</label>
+            <!-- <label class="pass" for="image">ADD YOUR IMAGE</label> -->
             <!-- <div v-if="" >
               <input name="image" type="file" required (change)="seletImage($event)" ><br/>
         <img class="imaget" *ngIf="url" [src]="url" alt="image" />
             </div> -->
-            <input name="image" type="file" *ngIf="!getuserimage()" required (change)="seletImage($event)"><br/>
-        <img class="imaget" *ngIf="getuserimage()" [src]=getuserimage() alt="image" />
+            <!-- <input name="image" type="file" *ngIf="!getuserimage()" required (change)="seletImage($event)"><br/>
+        <img class="imaget"  alt="image" /> -->
             
-            <label class="passs">DESCRIPTION</label>
+            <label class="pass">DESCRIPTION</label>
             <textarea type="description" #description name="email"  required (change)="getDescription($event)"></textarea>
             
           </div>
@@ -92,5 +92,3 @@
   
    
 </body>
-
-  <app-review-list></app-review-list>
