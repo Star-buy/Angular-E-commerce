@@ -17,7 +17,7 @@ module.exports = {
   payitem: async (req, res) => {
     const { title, quantity, image, price } = req.body;
     if (!title || !quantity || !image || !price) {
-      res.status(500).send("fill all the field");
+      res.send("fill all the field");
     } else {
       jwt.verify(req.token, process.env.JWT_SECRET_KEY, async (err) => {
         if (err) {
@@ -56,7 +56,7 @@ module.exports = {
       req.token = bearerToken;
       next();
     } else {
-      res.sendStatus(403);
+      res.send("lol");
     }
   },
 };

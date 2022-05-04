@@ -13,4 +13,17 @@ export class UnderNavComponent implements OnInit {
   ngOnInit(): void {
   }
 
+
+
+  getuserimage(){
+    if(localStorage['token'] ){
+    var x= atob(localStorage['token'].split('.')[1]);
+    var c =  JSON.parse(x);
+        return c.user.image } }
+  getusername(){
+    if(localStorage['token']){
+          var x= atob(localStorage['token'].split('.')[1]);
+          var c =  JSON.parse(x);
+              return c.user.name  }}
+
 }

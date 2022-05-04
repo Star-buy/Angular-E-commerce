@@ -3,10 +3,10 @@ import { UsersService } from '../users.service';
 
 @Component({
   selector: 'app-admin-data',
-  templateUrl: './admin-data.component.html',
-  styleUrls: ['./admin-data.component.css']
+  templateUrl: './admin-edit-item.component.html',
+  styleUrls: ['./admin-edit-item.component.css']
 })
-export class AdminDataComponent implements OnInit {
+export class AdminDataEditItemComponent implements OnInit {
 
   public products:any[]= [];
   constructor(

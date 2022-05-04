@@ -1,4 +1,4 @@
-
+<!-- 
 
 <div class="w3-main" style="margin-left:340px;margin-right:40px">
 
@@ -6,9 +6,8 @@
       <h1 class="w3-xxxlarge w3-text-red"><b>Signup</b></h1>
       
       <form #f="ngForm"(ngSubmit)="addUser(f)" >
-          <div class="w3-section">
-             
-             </div> 
+          <div class="w3-section">      
+             </div>      
              <div class="w3-section">
               <label>User Name</label>
               <input class="w3-input w3-border" type="userName" #password name="userName"  required (change)="GetuserName($event)">
@@ -33,7 +32,8 @@
           <input class="w3-input w3-border" type="password" #password name="password"  required (change)="GetPassword($event)">
         </div>
      
-       
+        <input name="image" type="file" required (change)="seletImage($event)"><br/>
+        <img class="image" *ngIf="url" [src]="url" alt="image" />
         <button type="submit" (click)="addUser($event)" class="w3-button w3-block w3-padding-large w3-red w3-margin-bottom">Login</button>
        
        
@@ -41,11 +41,49 @@
       
     </div>
   
-  </div> 
-
-
-
-
-
-
-
+  </div>  -->
+<div class="conti">
+  <div class="left"></div>
+  <div class="right">
+    <h1 style="color: #b64b20">Registration</h1>
+    <br />
+    <form #f="ngForm"(ngSubmit)="addUser(f)">
+    <div>
+      <p>Fill your name</p>
+      <input placeholder="Your Name..." class="nwme" type="userName" #password name="userName"  required (change)="GetuserName($event)"/>
+      <p>Email</p>
+      <input placeholder="@gmail.com" class="nwme" name="email" type="email" #email name="email"  required (change)="GetEmail($event)"/>
+      <p>Password</p>
+      <input
+        type="password"
+        placeholder="Your Password..."
+        class="nwme"
+        name="password"
+        #password name="password"  required (change)="GetPassword($event)"
+      />
+      <p>Confirm Passwordd</p>
+      <input
+        type="password"
+        placeholder="Your Password..."
+        class="nwme"
+        #password name="confirmPassword"  required (change)="GetconfirmPassword($event)"
+      /><br />
+      <div>
+        <h2 class="textoo">Select your image</h2>
+      
+      <input name="image" type="file" required (change)="seletImage($event)"><br/>
+        <img class="image" *ngIf="url" [src]="url" alt="image" /></div>
+      <select class="nwme" name="gender" style="align-items: center">
+        <option value="none" selected>Gender</option>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+        <option value="kids">kids</option>
+      </select>
+      <button class="btna">registrer</button>
+    </div>
+    <span class="span-span"
+      >login <button href="" class="a-a" routerLink="/signin">login</button></span
+    >
+  </form>
+  </div>
+</div>

@@ -19,5 +19,4 @@ router.post("/getrole", getRole);
 router.post("/signup", signupUser);
 router.post("/login", loginUser);
 router.post("/signupAdmin", signupAdmin);
-
 module.exports = router;

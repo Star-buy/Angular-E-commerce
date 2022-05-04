@@ -19,7 +19,16 @@ export class SignupComponent implements OnInit {
   password = ""
   userName=""
   confirmPassword = ""
+  url:any=""
 
+  seletImage(event:any){
+    let reader = new FileReader();
+    reader.readAsDataURL(event.target.files[0])
+    reader.onload = () =>{
+      this.url = reader.result
+     }
+    }
+    
 
   GetEmail(event:any){
     this.email = event.target.value
@@ -47,8 +56,17 @@ export class SignupComponent implements OnInit {
         var password = this.password
         var userName = this.userName
         var confirmPassword = this.confirmPassword
-        console.log(email,password,userName,confirmPassword)
-        axios.post("http://localhost:3000/users/signup" , {email:email,password:password,username:userName,confirmPassword :confirmPassword}).then(res=> { 
+        var image = this.url
+
+const data1={
+  email:email,
+  password:password,
+  username:userName,
+  confirmPassword :confirmPassword,
+  image:image
+}
+
+        axios.post("http://localhost:3000/users/signup" ,data1 ).then(res=> { 
         console.log(email,password,userName,confirmPassword)
 
           
