@@ -76,4 +76,4 @@ GetName(event:any){
               var x= atob(localStorage['token'].split('.')[1]);
               var c =  JSON.parse(x);
                   return c.user.name  }}
-
+        }

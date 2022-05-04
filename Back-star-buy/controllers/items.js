@@ -14,15 +14,15 @@ module.exports = {
 
   postItem: async function (req, res) {
     //const { title, description, image, price, gender, discount ,stock} = req.body;
-    const { title, description, image, price, gender, discount } = req.body;
+    const { title, description, image, price, gender, discount ,stock } = req.body;
    // if (!title || !description || !image || !price || !gender || !stock) {
-    if (!title || !description || !image || !price || !gender ) {
+    if (!title || !description || !image || !price || !gender || !stock) {
       res.send("please fill all the fields");
     }
     else if (discount) {
-     //jwt.verify(req.token, process.env.JWT_SECRET_KEY, async (err) => {
+     jwt.verify(req.token, process.env.JWT_SECRET_KEY, async (err) => {
         if (err) {
-          res.send('not authenticated');
+          res.send({message:'not authenticated'});
         } else {
           try {
             const response = await cloudinar.uploader.upload(
@@ -39,12 +39,12 @@ module.exports = {
                   price,
                   discount,
                   gender,
-                  //stock,
+                  stock,
                   async (err, result) => {
                     if (err) {
                       res.send(err);
                     }
-                    res.send("items added successfully");
+                    res.send({message:"items added successfully"});
                   }
                 );
               }
@@ -53,11 +53,11 @@ module.exports = {
             res.send(err);
           }
         }
-    //  });
+      });
     } else {
-   //   jwt.verify(req.token, process.env.JWT_SECRET_KEY, async (err) => {
+      jwt.verify(req.token, process.env.JWT_SECRET_KEY, async (err) => {
         if (err) {
-          res.send('not authenticated');
+          res.send({message:'not authenticated'});
         } else {
           try {
             const response = await cloudinar.uploader.upload(
@@ -73,12 +73,12 @@ module.exports = {
                   url,
                   price,
                   gender,
-                //  stock,
+                  stock,
                   async (err, result) => {
                     if (err) {
                       res.send(err);
                     }
-                    res.send("items added successfully");
+                    res.send({message:"items added successfully"});
                   }
                 );
               }
@@ -87,7 +87,7 @@ module.exports = {
             res.send(err);
           }
         }
-     // });
+      });
      
     }
   },
@@ -103,13 +103,13 @@ module.exports = {
     const id = req.params.id;
     jwt.verify(req.token, process.env.JWT_SECRET_KEY, async (err) => {
       if (err) {
-        res.send('not authenticated');
+        res.send({message:'not authenticated'});
       } else {
         items.deleteitem(id, (err, result) => {
           if (err) {
             return res.send(err);
           }
-          res.send("item deleted successfully");
+          res.send({message:"item deleted successfully"});
         });       
       }
     });
@@ -118,13 +118,13 @@ module.exports = {
   updateItem: async function (req, res) {
     const id = req.params.id;
     const { title, description, image, price, gender, discount ,stock} = req.body;
-    if (!title || !description || !image || !price || !gender || !stock) {
-      res.send("please fill all the fields");
-    }
+     if (!title || !description || !image || !price || !gender || !stock) {
+       res.send({message:"please fill all the fields"});
+     }
     if (discount) {
       jwt.verify(req.token, process.env.JWT_SECRET_KEY, async (err) => {
         if (err) {
-          res.send('not authenticated');
+          res.send({message:'not authenticated'});
         } else {
           try {
             const response = await cloudinar.uploader.upload(
@@ -147,7 +147,7 @@ module.exports = {
                     if (err) {
                       res.send(err);
                     }
-                    res.send("items updated successfully");
+                    res.send({message:"items updated successfully"});
                   }
                 );
               }
@@ -160,7 +160,7 @@ module.exports = {
     } else {
       jwt.verify(req.token, process.env.JWT_SECRET_KEY, async (err) => {
         if (err) {
-          res.send('not authenticated');
+          res.send({message:'not authenticated'});
         } else {
           try {
             const response = await cloudinar.uploader.upload(
@@ -182,7 +182,7 @@ module.exports = {
                     if (err) {
                       res.send(err);
                     }
-                    res.send("items updated successfully");
+                    res.send({message:"items updated successfully"});
                   }
                 );
               }
@@ -219,15 +219,15 @@ module.exports = {
       res.send(result);
     });
   },
-  verify: function (req, res, next) {
-    const bearerHeader = req.headers["authorization"];
-    if (typeof bearerHeader !== "undefined") {
-      const bearer = bearerHeader.split(" ");
-      const bearerToken = bearer[1];
-      req.token = bearerToken;
-      next();
-    } else {
-      res.send("lool");
-    }
-  },
+   verify: function (req, res, next) {
+     const bearerHeader = req.headers["authorization"];
+     if (typeof bearerHeader !== "undefined") {
+       const bearer = bearerHeader.split(" ");
+       const bearerToken = bearer[1];
+       req.token = bearerToken;
+       next();
+     } else {
+       res.send("lool");
+     }
+   },
 };

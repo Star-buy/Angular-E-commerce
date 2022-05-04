@@ -24,8 +24,6 @@ import { AdminPartComponent } from './adminPart/adminPart.component';
 import { ReviewListComponent } from './review-list/review-list.component';
 import { SigninComponent } from './signin/signin.component';
 import { SignupComponent } from './signup/signup.component';
-
-import { FormsModule } from '@angular/forms';
 import { FemaleComponent } from './female/female.component';
 import {MaleComponent} from './male/male.component'
 import {KidsComponent} from './kids/kids.component'
@@ -55,7 +53,7 @@ import { Home2Component } from './home2/home2.component';
 
     FemaleComponent,
     MaleComponent,
-    KidsComponent
+    KidsComponent,
 
     CarousselComponent,
     Caroussel2Component,
