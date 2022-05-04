@@ -10,10 +10,13 @@
         <div class="product-info">
             <h2  class="product-brand"> {{item['title']}} </h2>
             <p class="product-short-des">{{item['description']}}</p>
-            <span  class="price">{{item['price']}}</span><span class="actual-price"  > 10TND</span>
+            <span  class="price">$ {{item['price']}} TND </span><span class="actual-price"  *ngIf="item['discount']" >  {{ (item['price'] * item['discount'])/100 }} TND</span>
         </div>
     </div>
+    <app-payment [item]="item"  ></app-payment>
+
 </div>
+
 </section>
 
 <router-outlet></router-outlet>

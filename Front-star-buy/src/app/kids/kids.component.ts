@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import axios from 'axios';
 @Component({
   selector: 'app-kids',
   templateUrl: './kids.component.html',
@@ -7,9 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class KidsComponent implements OnInit {
 
-  constructor() { }
-
   ngOnInit(): void {
-  }
+    this.getData()
+    }
+    items=[]
+  
+    async getData() {
+      try {
+        const response =await axios.get("http://localhost:3000/items/getkids");
+    this.items=Object.values(response.data)
+        }
+      catch (error) {
+        console.log(error);
+      }
 
+}
 }

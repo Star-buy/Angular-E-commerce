@@ -20,7 +20,6 @@ export class ReviewComponent implements OnInit {
   location=""
   description=""
   url:any="";
-
     
 seletImage(event:any){
 let reader = new FileReader();
@@ -51,10 +50,10 @@ GetName(event:any){
          var location =this.location
          var image = this.url
         const data1 ={
-          name:name,
+          name:this.getusername(),
           description:description,
           location:location,
-          image:image
+          image:this.getuserimage()
         }
          axios.post("http://localhost:3000/reviews/postreview",data1,
          {headers:{'Authorization':`Bearer ${localStorage.getItem('token')}`}}
@@ -64,5 +63,18 @@ GetName(event:any){
 
        
         })
+
+        
       }
+      getuserimage(){
+        if(localStorage['token'] ){
+        var x= atob(localStorage['token'].split('.')[1]);
+        var c =  JSON.parse(x);
+            return c.user.image } }
+      getusername(){
+        if(localStorage['token']){
+              var x= atob(localStorage['token'].split('.')[1]);
+              var c =  JSON.parse(x);
+                  return c.user.name  }}
+
 }

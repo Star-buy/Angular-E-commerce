@@ -3,12 +3,12 @@
 <div class="w3-main" style="margin-left:340px;margin-right:40px">
   <div class="w3-container" id="contact" style="margin-top:75px">
       <h1 class="w3-xxxlarge w3-text-red"><b>Review</b></h1>
-      <form #f="ngForm"(ngSubmit)=" postReview(f)" >
+      <form #f="ngForm" >
           <div class="w3-section">
              </div> 
              <div class="w3-section">
               <label>name</label>
-              <input class="w3-input w3-border" type="name" #name name="name"  required (change)=" GetName($event)">
+              <input class="w3-input w3-border" [value]="getusername()" type="name" #name name="name"  required (change)=" GetName($event)">
             </div>
             <div class="w3-section">
               <label>location</label>
@@ -18,8 +18,8 @@
           <label>description</label>
           <input class="w3-input w3-border" type="description" #description name="email"  required (change)="getDescription($event)">
         </div>
-        <input name="image" type="file" required (change)="seletImage($event)"><br/>
-        <img class="image" *ngIf="url" [src]="url" alt="image" />
+        <input name="image" type="file" *ngIf="!getuserimage()" required (change)="seletImage($event)"><br/>
+        <img class="image" *ngIf="getuserimage()" [src]=getuserimage() alt="image" />
         <button type="submit" (click)="postReview($event)" class="w3-button w3-block w3-padding-large w3-red w3-margin-bottom">Review</button>
       </form>         
     </div>
