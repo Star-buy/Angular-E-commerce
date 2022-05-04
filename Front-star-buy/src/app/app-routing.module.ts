@@ -49,7 +49,7 @@ const routes: Routes = [
   // {component:ReviewComponent,path:"review"},
   // {component:ReviewListComponent,path:"review-list"},
   // {component:AccessoriesComponent, path: "accessories"},
-  // {component:AdminDataComponent, path: "admin-data"},
+   {component:AdminDataComponent, path: "admin-data"},
   // {component:CardComponent, path: "card"},
 ]
 @NgModule({
