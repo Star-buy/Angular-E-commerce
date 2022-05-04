@@ -24,10 +24,13 @@ import { AdminPartComponent } from './adminPart/adminPart.component';
 import { ReviewListComponent } from './review-list/review-list.component';
 import { SigninComponent } from './signin/signin.component';
 import { SignupComponent } from './signup/signup.component';
-
+import { FemaleComponent } from './female/female.component';
+import {MaleComponent} from './male/male.component'
+import {KidsComponent} from './kids/kids.component'
 import { CarousselComponent } from './caroussel/caroussel.component';
 import { Caroussel2Component } from './caroussel2/caroussel2.component';
 import { Home2Component } from './home2/home2.component';
+
 // import { ServicesComponent } from './services/AuthuserService';
 
 @NgModule({
@@ -47,9 +50,15 @@ import { Home2Component } from './home2/home2.component';
     ReviewListComponent,
     SigninComponent,
     SignupComponent,
+
+    FemaleComponent,
+    MaleComponent,
+    KidsComponent,
+
     CarousselComponent,
     Caroussel2Component,
     Home2Component
+
     // ServicesComponent,
   ],
   imports: [
