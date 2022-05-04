@@ -1,26 +1,7 @@
-<div>
-    <div>
-    <div class="side-menu">
-    <div class="brand-name">
-    <h1>Admin Side-Bar</h1>
-    </div>
-    <div class="img-case">
-    <img src="" alt="" class="imaget-t" />
-    </div>
-    <ul>
-    <li>
-    <img src="" alt="" />&nbsp;
-    <span>Dashboard</span>
-    </li>
-    <li>
-    <img src="" alt="" />&nbsp;
-    <a href="#order" style="color: aliceblue">Add Product</a>
-    </li>
-    </ul>
-    </div>
-    </div>
+<div class="container">
 
-    <pre>{{ products | json }}</pre>
+
+    <!-- <pre>{{ products | json }}</pre> -->
     <pre>{{ product| json }}</pre>
 
     <div class="continer">
@@ -30,11 +11,11 @@
             <br />
             <div>
                 <form action="" (submit)="createSubmit()" enctype="multipart/form-data">
-                    <p>Title</p>
+                    <label class="form-label">Title</label>
                     <input
                         type="text"
                         name="title"
-                        class="nwme-ne"
+                        class="form-control"
                         placeholder="Product name..."
                         [(ngModel)]="product.title"
                         />
@@ -49,14 +30,19 @@
                     <input
                         type="text"
                         name="price"
-                        class="nwme-ne"
+                        class="form-control"
                         placeholder="Product Price..."
                         [(ngModel)]="product.price"
                     />
                     <p>discount</p>
-                    <input [(ngModel)]="product.discount" name ="discount" type="number" placeholder="discount" class="discount" /><br />
+                    <input
+                    [(ngModel)]="product.discount" 
+                    name ="discount" type="number" 
+                    placeholder="discount" 
+                    class="form-control" />
+              
                     <p>Description</p>
-                    <textarea rows="4" cols="50"
+                    <textarea rows="4" cols="50" class="form-control"
                         type="text"
                         name="description"
                         style="width: 100%"
@@ -66,26 +52,20 @@
                     </textarea>
                     <br />
                     <div>
-                        <h2 class="textoo-o">Select your image</h2>
-                        <!-- <input 
-                         name="image"
-                         accept="image/png, image/jpeg, image/jpg"
-                         type="file" 
-                         class="files" 
-                         [(ngModel)]="product.image"
-                         /> -->
-                    </div>
+                        <label for="formFileLg" class="form-label">Large file input example</label>
+                        <input class="form-control form-control-lg" id="formFileLg" type="file">
+                      </div>
                     <div >
  
                     </div>
                     <br />
-                    <select name="gender" [(ngModel)]="product.gender">
+                    <select name="gender" [(ngModel)]="product.gender" class="form-select" aria-label="Default select example">
                         <option value="none" selected>Gender</option>
                         <option value="male">Male</option>
                         <option value="female">Female</option>
                         <option value="kids">kids</option>
                     </select>
-                    <button class="btna">Add</button>
+                    <button class="btn btn-primary">Add</button>
                 </form>
             </div>
         </div>

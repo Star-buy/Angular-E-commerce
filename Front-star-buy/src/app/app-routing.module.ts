@@ -10,6 +10,7 @@ import { MaleComponent } from './male/male.component';
 import { FemaleComponent } from './female/female.component';
 import { KidsComponent } from './kids/kids.component';
 import { AdminDataComponent } from './admin-data/admin-data.component';
+import { AdminDataEditItemComponent } from './admin-edit-item/admin-edit-item.component';
 import { AdminProductsComponent } from './admin-products/admin-products.component';
 import { AdminPartComponent } from './adminPart/adminPart.component';
 import { ReviewComponent } from './review/review.component';
@@ -50,6 +51,7 @@ const routes: Routes = [
   // {component:ReviewListComponent,path:"review-list"},
   // {component:AccessoriesComponent, path: "accessories"},
    {component:AdminDataComponent, path: "admin-data"},
+   {component:AdminDataEditItemComponent, path: "admin-edit-item"},
   // {component:CardComponent, path: "card"},
 ]
 @NgModule({
