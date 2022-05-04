@@ -1,0 +1,43 @@
+
+<div class="banner">
+    <br>
+    <br>
+    <br>
+    <div>
+        <h1 style="text-align: center;" class="h1-b">Our Services <br>  
+        </h1>
+
+    </div>
+   
+   
+
+     <div *ngIf="images && images.length > 0" class="caroousel-container">
+       <img
+         *ngFor="let image of images; let i = index"
+         [src]="image.imageSrc"
+         [alt]="image.imageAlt"
+         [ngClass]="{ 'image-active': selectedIndex === i }"
+         
+       />
+       <div *ngIf="indicator" class="carousel-dot-container">
+         <span
+           *ngFor="let dot of images; let i = index"
+           class="dot"
+           class="dot"
+           [ngClass]="{ active: selectedIndex === i }"
+           (click)="selectImage(i)"
+         >
+         </span>
+       </div>
+       <button *ngIf="controls"class="btn-caroussel btn-prev">
+         <i class="fas fa-arrow-circle-left icon-caroussel icon-prev"
+         (click)="onPrevClick()"></i>
+       </button>
+       <button *ngIf="controls"class="btn-caroussel btn-next">
+         <i class="fas fa-arrow-circle-right icon-caroussel icon-next"
+         (click)="onNextClick()"></i>
+       </button>
+     </div>
+     <div>
+   </div>
+   </div>
