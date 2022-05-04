@@ -40,6 +40,13 @@
                     name ="discount" type="number" 
                     placeholder="discount" 
                     class="form-control" />
+
+                    <p>stock</p>
+                    <input
+                    [(ngModel)]="product.stock" 
+                    name ="stock" type="number" 
+                    placeholder="stock" 
+                    class="form-control" />
               
                     <p>Description</p>
                     <textarea rows="4" cols="50" class="form-control"
@@ -53,14 +60,19 @@
                     <br />
                     <div>
                         <label for="formFileLg" class="form-label">Large file input example</label>
-                        <input class="form-control form-control-lg" id="formFileLg" type="file">
+                        
+
+
+                        <input  type="file" required (change)="seletImage($event)"><br/>
+                        <img class="image" *ngIf="url" [src]="url" alt="image" />
+
                       </div>
                     <div >
  
                     </div>
                     <br />
                     <select name="gender" [(ngModel)]="product.gender" class="form-select" aria-label="Default select example">
-                        <option value="none" selected>Gender</option>
+                        <option value="none" selected >Gender</option>
                         <option value="male">Male</option>
                         <option value="female">Female</option>
                         <option value="kids">kids</option>

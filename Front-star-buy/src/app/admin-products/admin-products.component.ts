@@ -13,11 +13,11 @@ import { FormGroup, FormControl, Validators} from '@angular/forms';
 })
 export class AdminProductsComponent implements OnInit {
 
-  public imageSrc: string = '';
   public products:any[]= [];
   public product:any = {} as any;
-  public formGroup: any
+  public formGroup: any;
 
+  public url:any = "";
   
   constructor(
     private userService: UsersService,
@@ -37,7 +37,6 @@ export class AdminProductsComponent implements OnInit {
       );
     }
 
-    url = "../assets";
     onselectFile(e:any){
           if(e.target.files){
             var reader = new FileReader();
@@ -48,8 +47,11 @@ export class AdminProductsComponent implements OnInit {
           }
     };
 
-    
     createSubmit(){
+      console.log("omar", this.product);
+      this.product.image = this.url;
+
+      console.log("omar2", this.product);
       this.userService.addProduct(this.product)
       .subscribe(data => {
       console.log(data);
@@ -58,6 +60,20 @@ export class AdminProductsComponent implements OnInit {
       }, error => { console.log(error);})     
       //console.log(this.product);
     }
+
+
+/********
+ * 
+ */
+ seletImage(event:any){
+  let reader = new FileReader();
+  reader.readAsDataURL(event.target.files[0])
+  reader.onload = () =>{
+    this.url = reader.result
+   }
+  }
+
+
 }
 
 

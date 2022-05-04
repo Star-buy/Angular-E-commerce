@@ -4,7 +4,7 @@ import axios from 'axios';
 @Component({
   selector: 'app-payment',
   templateUrl: './payment.component.html',
-  styleUrls: ['./payment.component.css']
+  styleUrls: ['./payment.component.css'],
 })
 export class PaymentComponent implements OnInit {
 @Input() item: any;

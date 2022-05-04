@@ -6,7 +6,20 @@
     <h1 style="text-align: center" class="update-h1">Update The Product</h1>
 
        <pre>{{ itemId }}</pre>
+       <pre>{{ item | json }}</pre>
 
+
+       <!-- 
+
+
+     "id": 6,
+    "title": "aaa",
+    "description": "aaaa",
+    "image": "https://res.cloudinary.com/dm6yw4dn0/image/upload/v1651317156/uoufjek9ocexttscqp3s.jpg",
+    "price": 20,
+    "discount": 5,
+    "gender": "male"
+        -->
 
     <!-- <form action="" (submit)="updateSubmit()" enctype="multipart/form-data"> -->
     <form action="" enctype="multipart/form-data">
@@ -16,6 +29,7 @@
             <input
               type="text"
               name="title"
+              value="{{item[0].title}}"
           
               class="nwme-me"
               placeholder="Product name..."
@@ -24,7 +38,7 @@
             <input
               type="text"
               name="desc"
-            
+              value="{{item[0].price}}"
               class="nwme-me"
               placeholder="Product Price..."
             />
@@ -33,11 +47,12 @@
               type="text"
               placeholder="discount"
               class="nwme-me"
+              value="{{item[0].discount}}"
             
             /><br />
             <p class="string">Select Gender</p><br/>
             <select class="nwme-me"  name="gender" style="align-items: center">
-              <option value="none" selected>Gender</option>
+              <option value="none" selected>{{item[0].gender}}</option>
               <option value="male">Male</option>
               <option value="female">Female</option>
               <option value="kids">kids</option>
@@ -46,14 +61,15 @@
             <textarea
               type="text"
               name="desc"
-            
               class="nwme-me"
               placeholder="Product description...."
-            >
+              >
+             
+            
             </textarea>
             <br />
             <input name="image" type="file" required (change)="seletImage($event)"><br/>
-            <img class="image" *ngIf="url" [src]="url" alt="image" />
+            <img class="image"  src="" alt="image" />
             <br />
           </div>
     </form>
