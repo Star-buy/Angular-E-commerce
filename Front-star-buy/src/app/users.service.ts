@@ -6,6 +6,7 @@ import { BehaviorSubject } from 'rxjs';
 
 
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -19,7 +20,10 @@ this.messageSource.next(message)
 }
 
   private baseURL = `http://localhost:3000/`
-  constructor(private http: HttpClient) { }
+  constructor(
+    private http: HttpClient
+    ) { }
+
 
   getAllData(): Observable<any> {
     return this.http.get<any>(`${this.baseURL}items/getitem`)
@@ -36,6 +40,11 @@ this.messageSource.next(message)
   //   return this.http.patch(`${this.baseURL}/update/${id}`, data)
   // }
 
+
+  getItem(id: string): Observable<any> {
+    //return this.http.patch(`${this.baseURL}/update/${id}`, data)
+    return this.http.get(`dsvfdsvqf`)
+  }
   // deleteData(id: string): Observable<any> {
   //   return this.http.delete(`${this.baseURL}/delete/${id}`)
   // }

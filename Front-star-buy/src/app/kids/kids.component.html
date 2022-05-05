@@ -1,6 +1,6 @@
-<p>kids works!</p>
-<div class="product">
-    <h2 class="product-category">Selling</h2>
+<div class="div-a">
+    <h1 style="text-align: center" class="title-product">kids Products</h1>
+    <div class="product">
     <div *ngFor="let item of items; let index = index" class="product-container">
      <div  class="product-card">
         <div class="product-image">
@@ -14,4 +14,6 @@
             <span  class="price">$ {{item['price']}} TND </span><span class="actual-price" *ngIf="item['discount']" > {{ (item['price'] * item['discount'])/100 }}  TND</span>
         </div> 
     </div>
+    </div>
 </div>
+  
