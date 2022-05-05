@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { FemaleComponent } from './female.component';
@@ -23,3 +24,31 @@ describe('FemaleComponent', () => {
     expect(component).toBeTruthy();
   });
 });
+=======
+import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
+
+import axios from 'axios'
+@Component({
+  selector: 'app-female',
+  templateUrl: './female.component.html',
+  styleUrls: ['./female.component.css']
+})
+export class FemaleComponent implements OnInit {
+
+  ngOnInit(): void {
+    this.getData()
+    }
+    items=[]
+  
+    async getData() {
+      try {
+        const response =await axios.get("http://localhost:3000/items/getfemale");
+    this.items=Object.values(response.data)
+        }
+      catch (error) {
+        console.log(error);
+      }
+}
+}
+>>>>>>> c953bf23297535474f252e26015022dfba74fb2a

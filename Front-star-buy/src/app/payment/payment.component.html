@@ -1,0 +1,34 @@
+<h1>Payment component</h1>
+<div class="product">
+    <h1 style="text-align: center" class="payment-title">Payment</h1>
+   <img [src]="item['image']"  />
+    <div>
+        <h4 class="pass" style="text-align: center" value="gb" >Product Name</h4>
+      <input
+        [value]=item.title
+        readonly="readonly"
+        placeholder="title"
+        class="inpat-e"
+        (change)="gettitle($event)"
+      /><br />
+      <h4 class="pass" style="text-align: center" value="5" >Product Price</h4>
+      <input
+     
+        readonly="readonly"
+        placeholder="price"
+        class="inpat-e"
+        (change)="getprice($event)"
+
+      /><br />
+      <h4 class="pass" style="text-align: center" >Product Quantity</h4>
+      <input
+        
+        type="number"
+        placeholder="quantity"
+        class="inpat-e"
+        (change)="getquantity($event)"
+
+      /><br />
+      <button type="submit" class="button-three" (click)="pay($event)" >Pay</button>
+    </div>
+  </div>

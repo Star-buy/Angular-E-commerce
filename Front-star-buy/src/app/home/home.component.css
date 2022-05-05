@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .hero{
     width: 100%;
         margin-top: 94px;
@@ -20,4 +21,75 @@
     text-transform: capitalize;
     font-size: 35px;
     font-weight: 300;
+=======
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+.banner{
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(121, 121, 121, 0.75),rgba(0,0,0,0.75)),url(https://imagesvc.meredithcorp.io/v3/mm/image?q=60&c=sc&poi=%5B1000%2C651%5D&w=2000&h=1000&url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F24%2F2017%2F05%2Fgettyimages-6117-000984-2000.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position:center;
+}
+.content{
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align:center;
+    color: #fff;
+
+}
+.content h1{
+    font-size: 70px;
+    margin-top: 80px;
+
+}
+.content p {
+    margin: 20px auto;
+    font-weight: 100;
+    line-height: 25px;
+
+}
+button{
+    width: 200px;
+    padding: 15px 0;
+    text-align: center;
+    margin: 20px 10px;
+    border-radius: 25px;
+    font-weight: bold;
+    border: 2px solid #961b00;
+    background:transparent;
+    color: #fff;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+span{
+    background: #961b00;
+    height: 100%;
+    width: 0;
+    border-radius: 25px;
+    position:absolute;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    transition: 0.5s;
+}
+button:hover span{
+    width: 100%;
+}
+button:hover{
+    border: none;
+}
+p{
+    font-size: 25px;
+}
+h1{
+    font-style: italic;
+>>>>>>> c953bf23297535474f252e26015022dfba74fb2a
 }

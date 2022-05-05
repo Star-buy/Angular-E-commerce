@@ -1,0 +1,47 @@
+<body>
+  <div class="banner">
+<br>
+<br>
+ 
+  <section class="testimonials">
+    <div class="testimonials-heading" >
+      <span style="color: azure">Reviews</span>
+      <h1 style="color: rgb(255, 61, 12)">Customers Says</h1>
+      <button class="buttom" style="vertical-align: middle">
+        <span (click)="fetchdata()"></span>
+      </button>
+    </div>
+    <div class="testimonial-box-container">
+      <div class="testimonial-box"  *ngFor="let item of reviewdata">
+        <div class="box-top">
+          <div class="profile">
+            <div class="profile-img">
+              <img
+                [src]="item.image"
+                alt=""
+              />
+            </div>
+            <div class="name-user">
+              <h1>{{item.name}}</h1>
+              <h1>{{item.location}}</h1>
+            </div>
+          </div>
+          <div class="reviews">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="far fa-star"></i>
+          </div>
+        </div>
+        <div class="client-comment">
+          <p>
+            {{item.description}}
+          </p>
+        </div>
+      </div>
+      
+    </div>
+  </section>
+</div>
+</body>

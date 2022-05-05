@@ -1,3 +1,4 @@
+<<<<<<< HEAD
   <section class="product">
     <h2 class="product-category">Selling</h2>
     <div class="product-container">
@@ -16,3 +17,28 @@
 </div>
 
 </section>
+=======
+
+    
+
+<div class="div-a">
+    <h1 style="text-align: center" class="title-product"> ManProducts</h1>
+    <div class="product">
+    <div *ngFor = "let item of manitems; let index = index" class="product-container">
+        
+     <div  class="product-card">
+        <div class="product-image">
+            <span class="discount-tag" *ngIf="item['discount']" > {{item['discount']}}</span>
+            <img [src]="item['image']" class="product-thumb">
+            <button class="card-btn" >add to whislist</button><br/>
+        </div>
+        <div class="product-info">
+            <h2  class="product-brand">  {{item['title']}}</h2>
+            <p class="product-short-des"> {{item['description']}} </p>
+            <span  class="price">$ {{item['price']}} TND </span><span class="actual-price" *ngIf="item['discount']" > {{ (item['price'] * item['discount'])/100 }}  TND</span>
+        </div> 
+    </div>
+    </div>
+</div>
+
+>>>>>>> c953bf23297535474f252e26015022dfba74fb2a

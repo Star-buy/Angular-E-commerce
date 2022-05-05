@@ -1,0 +1,68 @@
+body{
+  margin: 0;
+  padding: 0;
+}
+.header{
+  height: 25vh;
+  background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),url(https://www.maxpixel.net/static/photo/1x/Banner-Background-Social-Media-Cover-Cover-6617550.png);
+  background-size: cover;
+  background-position:center ;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.search{
+  height: 50px;
+  padding: 10px;
+  border: none;
+  border-radius: 25px;
+  outline: none;
+  width: 400px;
+}
+.search-btn{
+  height: 50px;
+  width: 150px;
+  background: #ecac62;
+  border: none;
+  color: black;
+  border-radius: 25px;
+}
+.search-btn:hover{
+  background: #ffc107;
+  cursor: pointer;
+}
+.lin-container {
+  width: 78%;
+  display: flex;
+  padding: 10px 10vw;
+  justify-content: center;
+  list-style: none;
+  border-top: 1px solid #d1d1d1;
+}
+.li {
+  padding: 8px 16px;
+  margin: 11px 0px;
+  font-size: 30px;
+  text-decoration: none;
+  color: #ffffff;
+  opacity: 14.5;
+  transition: 0.5s;
+}
+.li:hover {
+  color: red;
+  opacity: 1;
+}
+.imaget {
+  width: 1%;
+  border-radius: 50%;
+  width: 3cm;
+  height: 3cm;
+}
+.h1{
+  color: #ffffff;
+  font-size: 45px;
+  letter-spacing: 2px;
+  font-style: oblique;
+  margin-bottom: -1.5rem;
+}
