@@ -1,66 +1,78 @@
-<div>
-    <div>
-      <div class="side-menu">
-        <div class="brand-name">
-          <h1>Admin Side-Bar</h1>
-        </div>
-        <div class="img-case">
-          <img src="" alt="" class="imaget-t" />
-        </div>
-        <ul>
-          <li>
-            <img src="" alt="" />&nbsp;
-            <span>Dashboard</span>
-          </li>
-          <li>
-            <img src="" alt="" />&nbsp;
-            <a
-              href="#order"
-            
-              style="color: aliceblue"
-              >Add Product</a
-            >
-          </li>
-        </ul>
-      </div>
-    </div>
+<div class="container">
+
+
+    <!-- <pre>{{ products | json }}</pre> -->
+    <!-- <pre>{{ product| json }}</pre> -->
+
     <div class="continer">
-      <div class="left-le"></div>
-      <div class="right-re">
-        <h1 style="color: rgb(252 189 57)">Add Product</h1>
-        <br />
-        <div>
-          <p>Title</p>
-          <input type="text" #name name="title"   required (change)= "getTitle($event) " class="nwme-ne" placeholder="Product name..."/>
-          <p>Price</p>
-          <input type="text" name="desc"  class="nwme-ne" placeholder="Product Price..."/>
-  <p>discount</p>
-  
-                      <input type="text" placeholder='discount'  class="nwme-ne"  /><br/>
-  
-          <p>Description</p>
-  
-          <textarea type="text" name="desc" class="nwme-ne" placeholder="Product description...">
-          </textarea>
-          <br />
-          <p>Stock</p>
-          <input class="nwme-ne" placeholder="stock..." type="number"/>
-          <br/>
-            <select  name="gender">
-      <option value="none" selected>Gender</option>
-      <option  value="male">Male</option>
-      <option  value="female">Female</option>
-      <option  value="kids">kids</option>
-  </select>
-          <button  class="btna">Add</button>
-          <input name="image" type="file" required (change)="seletImage($event)"><br/>
-          <img class="image" *ngIf="url" [src]="url" alt="image" />
-        
+        <div class="left-le"></div>
+        <div class="right-re">
+            <h1 style="color: rgb(252 189 57)">Add Product</h1>
+            <br />
+            <div>
+                <form enctype="multipart/form-data">
+                    <label class="form-label">Title</label>
+                    <input
+                        type="text"
+                      #title  name="title"
+                        class="form-control"
+                        placeholder="Product name..."
+                        required (change)="getTitle($event)"
+                        />
+
+                    <p>Price</p>
+                    <input
+                    type="price"
+                    #price  name="title"
+                      class="form-control"
+                      placeholder="price"
+                      required (change)="getPrice($event)"
+                    />
+                    <p>discount</p>
+                    <input
+                    type="number"
+                    #discount  name="discount"
+                      class="form-control"
+                      placeholder="discount"
+                      required (change)="getDiscount($event)" />
+              
+                    <p>Description</p>
+                    <textarea rows="4" cols="50" class="form-control"
+                    type="text"
+                    #description  name="description"
+                      class="form-control"
+                      placeholder="description..."
+                      required (change)="getDescription($event)"
+                    >
+                    </textarea>
+                    <p>stock</p>
+                    <input
+                    type="stock"
+                    #stock  name="stock"
+                      class="form-control"
+                      placeholder="stock"
+                      required (change)="getStock($event)"
+                    />
+                    <br />
+                    <div>
+                        <h2 class="textoo">Select your image</h2>
+                      
+                      <input name="image" type="file" required (change)="seletImage($event)"><br/>
+                        <img class="image" *ngIf="url" [src]="url" alt="image" />
+                      </div>
+                    <div>
+                    </div>
+                    <br />
+                    <select #gender name="gender"                       required (change)="getGender($event)"
+                    class="form-select" aria-label="Default select example">
+                        <option value="none" selected>Gender</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="kids">kids</option>
+                    </select>
+                    <button class="btn btn-primary"  (click)="addproduct()" >Add</button>
+                </form>
+            </div>
         </div>
-      </div>
-    </div>
-    </div>
-
-
-
-   
+   </div>
+   </div>

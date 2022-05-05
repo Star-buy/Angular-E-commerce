@@ -1,26 +1,81 @@
 
+  <body class="banner">
+    <br>
 
-<div class="w3-main" style="margin-left:340px;margin-right:40px">
-  <div class="w3-container" id="contact" style="margin-top:75px">
-      <h1 class="w3-xxxlarge w3-text-red"><b>Review</b></h1>
-      <form #f="ngForm" >
-          <div class="w3-section">
-             </div> 
-             <div class="w3-section">
-              <label>name</label>
-              <input class="w3-input w3-border" [value]="getusername()" type="name" #name name="name"  required (change)=" GetName($event)">
+  <div>
+    <div class="rev-section">
+      <h2 class="title">Our Custumers Love Us</h2>
+      <br>
+      <p class="note" >
+        Your Feedback helps us improve our service and support .<br> Please take a minute to rate your exprecice with our representative today!
+      </p>
+      <br>
+      <div class="con">
+        <div class="brandi"></div>
+        <div class="brandtitle">Give as a review</div>
+        <form  #f="ngForm">
+          <div class="inputsss">
+            <label class="pass" for="name">NAME</label>
+            <input
+              class="inpat"
+              placeholder="Put your name ..."
+              [value]="getusername()" type="name" #name name="name"  (change)=" GetName($event)"
+              
+            />
+            <label class="pass" for="location">LOCATION</label>
+            <input
+            type="location" #location name="location"  required (change)="GetLocation($event)"
+              class="inpat"
+              placeholder="Put your Location ..."
+              
+            />
+            <br>
+            <label class="pass" for="location">RATE WITH STARS</label>
+            <div class="container">
+              <div class="post">
+              </div>
+
+              <!-- class="input-input"
+              placeholder="@gmail.com"
+              type="email" #email name="email"  required (change)="GetEmail($event)"
+              -->
+
+              <div class="star-widget">
+                <input type="radio" name="rate" id="rate-5">
+                <label for="rate-5" class="fas fa-star" id="starito"></label>
+                <input type="radio" name="rate" id="rate-4" >
+                <label for="rate-4" class="fas fa-star" id="starito"></label>
+                <input type="radio" name="rate" id="rate-3" >
+                <label for="rate-3" class="fas fa-star" id="starito"></label>
+                <input type="radio" name="rate" id="rate-2">
+                <label for="rate-2" class="fas fa-star" id="starito"></label>
+                <input type="radio" name="rate" id="rate-1">
+                <label for="rate-1" class="fas fa-star" id="starito"></label>
+                <form action="#" class="form">
+                  <header class="header"></header>
+                </form>
+              </div>
             </div>
-            <div class="w3-section">
-              <label>location</label>
-              <input class="w3-input w3-border" type="location" #location name="location"  required (change)="GetLocation($event)">
-            </div>
-        <div class="w3-section">
-          <label>description</label>
-          <input class="w3-input w3-border" type="description" #description name="email"  required (change)="getDescription($event)">
-        </div>
-        <input name="image" type="file" *ngIf="!getuserimage()" required (change)="seletImage($event)"><br/>
-        <img class="image" *ngIf="getuserimage()" [src]=getuserimage() alt="image" />
-        <button type="submit" (click)="postReview($event)" class="w3-button w3-block w3-padding-large w3-red w3-margin-bottom">Review</button>
-      </form>         
+            <label class="pass" for="image">ADD YOUR IMAGE</label>
+            <!-- <div v-if="" >
+              <input name="image" type="file" required (change)="seletImage($event)" ><br/>
+        <img class="imaget" *ngIf="url" [src]="url" alt="image" />
+            </div> -->
+            <input name="image" type="file" *ngIf="!getuserimage()" required (change)="seletImage($event)"><br/>
+        <img class="imaget" *ngIf="getuserimage()" [src]=getuserimage() alt="image" />
+            
+            <label class="passs">DESCRIPTION</label>
+            <textarea type="description" #description name="email"  required (change)="getDescription($event)"></textarea>
+            
+          </div>
+          <button type="submit" class="log" (click)="postReview($event)">Send</button>
+        </form>
+      </div>
     </div>
-  </div> 
+  
+  </div>
+  
+   
+</body>
+
+  <app-review-list></app-review-list>

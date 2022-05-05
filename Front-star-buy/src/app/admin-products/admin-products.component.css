@@ -1,4 +1,4 @@
-.continer {
+/* .continer {
     width: 950px;
     height: 974px;
     margin: 90px auto;
@@ -66,7 +66,12 @@
     margin: auto;
     display: block;
     margin-bottom: 10px;
-    /* border-radius: 50%; */
     width: 2cm;
     height: 2cm;
+  } */
+  /* border-radius: 50%; */
+  .image{
+    border-radius: 50%;
+    height: 250px;
+    width: 250px;
   }

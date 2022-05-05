@@ -7,17 +7,19 @@ import axios from 'axios';
   styleUrls: ['./payment.component.css']
 })
 export class PaymentComponent implements OnInit {
-@Input() item: any;
+@Input() message: any;
 
   constructor() { }
 
 
   ngOnInit(): void {
+    console.log(this.message);
+    console.log(this.getdata());
+    
   }
-  image=""
-  title=""
-  price=""
-  quantity=""
+  image="https://res.cloudinary.com/dm6yw4dn0/image/upload/v1651702090/ivkziqs6h3liptufyfhj.webp"
+  title="t-shirt"
+  price=500
 
   getimage(event: any){
 this.image = event.target.value;
@@ -28,25 +30,29 @@ this.image = event.target.value;
   getprice(event:any){
     this.price = event.target.value
   }
-  getquantity(event:any){
-    this.quantity = event.target.value
-  }
 
 
-  pay(f:any){
-    let data=f.value
+  getdata(){
+    if(localStorage['data'] ){
+      var x= atob(localStorage['data'].split('.')[1]);
+      var c =  JSON.parse(x);
+          console.log(x);
+           }
+       }
+  pay(event:any){
     const data2 ={
       image:this.image,
       title:this.title,
       price:this.price,
-      quantity:this.quantity
+      quantity:1
     }
-    // axios.post("http://localhost:3000/payment/payitem",data2,
-    // {headers:{'Authorization':`Bearer ${localStorage.getItem('token')}`}}
-
-    // ).then(response =>{console.log(response.data);
-    // }).catch(error =>{console.log(error)})
     console.log(data2);
+    
+     axios.post("http://localhost:3000/payment/payitem",data2,
+     {headers:{'Authorization':`Bearer ${localStorage.getItem('token')}`}}
+
+     ).then(response =>{window.location.href = response.data
+     }).catch(error =>{console.log(error)})
     
   }
 

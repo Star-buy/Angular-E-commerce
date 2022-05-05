@@ -58,9 +58,7 @@ GetName(event:any){
          axios.post("http://localhost:3000/reviews/postreview",data1,
          {headers:{'Authorization':`Bearer ${localStorage.getItem('token')}`}}
          ).then(res=> { 
-         
          console.log(res)
-
        
         })
 
