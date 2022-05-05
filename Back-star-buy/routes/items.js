@@ -10,7 +10,8 @@ const {
   getMan,
   getKids,
   getFemale,
-  verify
+  verify,
+  getItemsById
 } = require("../controllers/items");
 
 /// USERS ROUTES ///
@@ -18,7 +19,8 @@ const {
 router.post("/postitem",verify, postItem);
 router.get("/getitem", getItems);
 router.delete("/deleteitem/:id",verify, deleteItem);
-router.put("/updateitem/:id",verify, updateItem);
+router.get("/updateitem/:id",verify, updateItem);
+router.get("/getOneItem/:id",getItemsById);
 router.get("/getmale", getMan);
 router.get("/getkids", getKids);
 router.get("/getfemale", getFemale);

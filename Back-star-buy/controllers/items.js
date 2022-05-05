@@ -11,16 +11,15 @@ module.exports = {
   /**
    * postItem
    */
-
+  
   postItem: async function (req, res) {
-    //const { title, description, image, price, gender, discount ,stock} = req.body;
-    const { title, description, image, price, gender, discount } = req.body;
-   // if (!title || !description || !image || !price || !gender || !stock) {
-    if (!title || !description || !image || !price || !gender ) {
+    const { title, description, image, price, gender, discount ,stock} = req.body;
+    console.log(req.body);
+    if (!title || !description || !image || !price || !gender || !stock) {
       res.send("please fill all the fields");
     }
     else if (discount) {
-     //jwt.verify(req.token, process.env.JWT_SECRET_KEY, async (err) => {
+      jwt.verify(req.token, process.env.JWT_SECRET_KEY, async (err) => {
         if (err) {
           res.send('not authenticated');
         } else {
@@ -39,7 +38,7 @@ module.exports = {
                   price,
                   discount,
                   gender,
-                  //stock,
+                  stock,
                   async (err, result) => {
                     if (err) {
                       res.send(err);
@@ -53,9 +52,9 @@ module.exports = {
             res.send(err);
           }
         }
-    //  });
+      });
     } else {
-   //   jwt.verify(req.token, process.env.JWT_SECRET_KEY, async (err) => {
+      jwt.verify(req.token, process.env.JWT_SECRET_KEY, async (err) => {
         if (err) {
           res.send('not authenticated');
         } else {
@@ -73,7 +72,7 @@ module.exports = {
                   url,
                   price,
                   gender,
-                //  stock,
+                  stock,
                   async (err, result) => {
                     if (err) {
                       res.send(err);
@@ -87,7 +86,7 @@ module.exports = {
             res.send(err);
           }
         }
-     // });
+      });
      
     }
   },
@@ -99,6 +98,20 @@ module.exports = {
       res.send(result);
     });
   },
+
+
+  getItemsById: function (req, res) {
+    const id = req.params.id;
+    items.getItemById(id, (err, result) => {
+
+      if (err) {
+        return res.send(err);
+      }
+      res.send(result);
+    });
+  },
+
+
   deleteItem: function (req, res) {
     const id = req.params.id;
     jwt.verify(req.token, process.env.JWT_SECRET_KEY, async (err) => {
