@@ -155,8 +155,27 @@ module.exports = {
                         }
                         if (result.length) {
                           if (result[0].role === "admin") {
-                            return res.send("hi admin");
+                            const user = {
+                              id: result[0].id,
+                              name: result[0].username,
+                              email: result[0].email,
+                              role: result[0].role
+                            };
+                            jwt.sign(
+                              { user },
+                              process.env.JWT_SECRET_KEY,
+                              (err, token) => {
+                                if (err) {
+                                  return res.send(err);
+                                }
+                                res.send(token);
+                              }
+
+                            );                          } else if (result[0].role === null) {
+
+                            );
                           } else if (result[0].role === null) {
+
                             //return res.send("login successful");
                             users.getAll(email, (err, result) => {
                               if (err) {
@@ -229,7 +248,22 @@ module.exports = {
                 (err, result) => {
                   if (err) res.send(err);
                   else {
-                    res.send("signup successfully ");
+                    const user = {
+                      id: result[0].id,
+                      name: result[0].username,
+                      email: result[0].email,
+                      role: result[0].role
+                    };
+                    jwt.sign(
+                      { user },
+                      process.env.JWT_SECRET_KEY,
+                      (err, token) => {
+                        if (err) {
+                          return res.send(err);
+                        }
+                        res.send(token);
+                      }
+                    );
                   }
                 }
               );

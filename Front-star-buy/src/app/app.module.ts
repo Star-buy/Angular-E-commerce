@@ -25,8 +25,11 @@ import { AdminPartComponent } from './adminPart/adminPart.component';
 import { ReviewListComponent } from './review-list/review-list.component';
 import { SigninComponent } from './signin/signin.component';
 import { SignupComponent } from './signup/signup.component';
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> d134a56c12b5a31b3eabe974282ef6d618fe5dac
 import { FemaleComponent } from './female/female.component';
 import {MaleComponent} from './male/male.component'
 import {KidsComponent} from './kids/kids.component'

@@ -68,5 +68,14 @@
     margin-bottom: 10px;
     width: 2cm;
     height: 2cm;
+
+  } */
+  /* border-radius: 50%; */
+  .image{
+    border-radius: 50%;
+    height: 250px;
+    width: 250px;
+  }=======
   }
   /* border-radius: 50%; */
+

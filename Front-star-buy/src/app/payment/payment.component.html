@@ -1,23 +1,52 @@
 <h1>Payment component</h1>
 <div class="product">
     <h1 style="text-align: center" class="payment-title">Payment</h1>
+
+   <img src="https://res.cloudinary.com/dm6yw4dn0/image/upload/v1651702090/ivkziqs6h3liptufyfhj.webp"  />
+    <div>
+        <h4 class="pass" style="text-align: center" value="gb" >Product Name</h4>
+      <input
+      #title
+      name="title" 
+      value="t-shirt"
+
    <img [src]="item['image']"  />
     <div>
         <h4 class="pass" style="text-align: center" value="gb" >Product Name</h4>
       <input
         [value]=item.title
+
         readonly="readonly"
+        name="title"
         placeholder="title"
         class="inpat-e"
+
+        required (change)="gettitle($event)"
+      /><br />
+      <h4 class="pass" style="text-align: center" value="5" >Product Price</h4>
+      <input
+      #price
+      name="price"
+      value="500"
+        readonly="readonly"
+        placeholder="price"
+        class="inpat-e"
+        required (change)="getprice($event)"
+
         (change)="gettitle($event)"
       /><br />
       <h4 class="pass" style="text-align: center" value="5" >Product Price</h4>
       <input
+<<<<<<< HEAD
    
+=======
+     
+>>>>>>> d134a56c12b5a31b3eabe974282ef6d618fe5dac
         readonly="readonly"
         placeholder="price"
         class="inpat-e"
         (change)="getprice($event)"
+
 
       /><br />
       <h4 class="pass" style="text-align: center" >Product Quantity</h4>
@@ -26,10 +55,17 @@
         type="number"
         placeholder="quantity"
         class="inpat-e"
+
+
+      /><br />
+      <button type="submit" class="button-three"  (click)="pay($event)" >Pay</button>
+
         (change)="getquantity($event)"
 
       /><br />
       <button type="submit" class="button-three" (click)="pay($event)" >Pay</button>
-      
+
+
+
     </div>
   </div>
