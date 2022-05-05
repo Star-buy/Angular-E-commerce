@@ -28,7 +28,6 @@ export class SignupComponent implements OnInit {
       this.url = reader.result
      }
     }
-    
 
   GetEmail(event:any){
     this.email = event.target.value

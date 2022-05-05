@@ -24,7 +24,11 @@
   margin: auto;
   border-radius: 50%;
   box-sizing: border-box;
+<<<<<<< HEAD
   box-shadow: 7px 7px 10px #D89258, -7px -7px 10px #D89258;
+=======
+  box-shadow: 7px 7px 10px #d89258, -7px -7px 10px #d89258;
+>>>>>>> d134a56c12b5a31b3eabe974282ef6d618fe5dac
 }
 .brandtitle {
   margin-top: 10px;

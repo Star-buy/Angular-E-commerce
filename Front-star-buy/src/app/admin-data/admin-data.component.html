@@ -1,5 +1,9 @@
 <div class ="container">
 
+<<<<<<< HEAD
+=======
+  <h2 class="product-category">Item list</h2>
+>>>>>>> d134a56c12b5a31b3eabe974282ef6d618fe5dac
       <table class="table">
         <thead>
           <tr>
@@ -26,6 +30,51 @@
           </tr>
         </tbody>
       </table>
+
+
+      <h2 class="product-category">Item list</h2>
+
+          <table class="table">
+            <thead>
+              <tr>
+                <label for="">Searching by item label :</label>
+                <input
+                class=""
+                type="text"
+                placeholder="Search Product..."
+              />
+              </tr>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Title</th>
+                <th scope="col">Description</th>
+                <th scope="col">Image</th>
+                <th scope="col">Price</th>
+                <th scope="col">Discount</th>
+                <th scope="col">Gender</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let product of products">
+                <th scope="row">1</th>
+                <td>{{ product.title }}</td>
+                <td>{{ product.description}}</td>
+                <td><img src="{{ product.image}}" alt="" width="100"></td>
+                <td>{{ product.price}}</td>
+                <td>{{ product.discount}}</td>
+                <td>{{ product.gender}}</td>
+                <td><a href="" class="btn btn-info" routerLink="/admin-edit-item/{{ product.id}}">Edit</a></td>
+                <td><a href="" class="btn btn-danger">Delete</a></td>
+
+              </tr>
+            </tbody>
+          </table>
+ 
+    <!-- <pre>{{ products | json }}</pre> -->
+
+   
+  </div>
+
 
       <div class="continer">
         <div class="left-le"></div>

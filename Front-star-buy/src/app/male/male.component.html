@@ -1,7 +1,18 @@
+<<<<<<< HEAD
 <div class="div-a">
     <h1 style="text-align: center" class="title-product"> ManProducts</h1>
     <div class="product">
     <form *ngFor = "let item of manitems; let index = index" class="product-container">
+=======
+
+    
+
+<div class="div-a">
+    <h1 style="text-align: center" class="title-product"> ManProducts</h1>
+    <div class="product">
+    <div *ngFor = "let item of manitems; let index = index" class="product-container">
+        
+>>>>>>> d134a56c12b5a31b3eabe974282ef6d618fe5dac
      <div  class="product-card">
         <div class="product-image">
             <span class="discount-tag" *ngIf="item['discount']" > {{item['discount']}}</span>
@@ -14,5 +25,11 @@
             <span  class="price">$ {{item['price']}} TND </span><span class="actual-price" *ngIf="item['discount']" > {{ (item['price'] * item['discount'])/100 }}  TND</span>
         </div>
     </div>
+<<<<<<< HEAD
 </form>
 </div>
+=======
+    </div>
+</div>
+
+>>>>>>> d134a56c12b5a31b3eabe974282ef6d618fe5dac

@@ -19,4 +19,8 @@ export class MaleComponent implements OnInit {
         console.log(error);
       }
   }
+<<<<<<< HEAD
+=======
+
+>>>>>>> d134a56c12b5a31b3eabe974282ef6d618fe5dac
 }
