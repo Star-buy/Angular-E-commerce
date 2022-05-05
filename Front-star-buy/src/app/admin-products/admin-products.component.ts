@@ -130,6 +130,8 @@ axios.post('http://localhost:3000/items/postitem', dataa, {headers:{'Authorizati
 }
 
 }
+<<<<<<< HEAD
+=======
 =======
     this.userService.getAllData()
       .subscribe(data => {
@@ -164,4 +166,5 @@ axios.post('http://localhost:3000/items/postitem', dataa, {headers:{'Authorizati
 }
 
 
+>>>>>>> d134a56c12b5a31b3eabe974282ef6d618fe5dac
 

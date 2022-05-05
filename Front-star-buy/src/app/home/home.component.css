@@ -18,18 +18,15 @@
     transform: translateY(-50%);
     text-align:center;
     color: #fff;
-
 }
 .content h1{
     font-size: 70px;
     margin-top: 80px;
-
 }
 .content p {
     margin: 20px auto;
     font-weight: 100;
     line-height: 25px;
-
 }
 button{
     width: 200px;
@@ -38,7 +35,7 @@ button{
     margin: 20px 10px;
     border-radius: 25px;
     font-weight: bold;
-    border: 2px solid #961b00;
+    border: 2px solid #961B00;
     background:transparent;
     color: #fff;
     cursor: pointer;
@@ -46,7 +43,7 @@ button{
     overflow: hidden;
 }
 span{
-    background: #961b00;
+    background: #961B00;
     height: 100%;
     width: 0;
     border-radius: 25px;

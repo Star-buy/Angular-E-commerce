@@ -1,8 +1,11 @@
 *{
     margin: 0;
     padding: 0;
+<<<<<<< HEAD
+=======
 
    
+>>>>>>> d134a56c12b5a31b3eabe974282ef6d618fe5dac
 }
 .title-product{
     color: orange;
@@ -19,12 +22,18 @@
     background-position:center;
 }
 .product{
+<<<<<<< HEAD
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 20px;
+=======
     
     
     display: grid;
     grid-template-columns: repeat(3,1fr);
     gap: 20px;
 
+>>>>>>> d134a56c12b5a31b3eabe974282ef6d618fe5dac
  }
 .product{
     position: relative;
