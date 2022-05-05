@@ -75,4 +75,6 @@ GetName(event:any){
               var c =  JSON.parse(x);
                   return c.user.name  }}
 
+
 }
+
