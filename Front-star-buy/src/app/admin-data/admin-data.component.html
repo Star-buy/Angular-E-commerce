@@ -1,15 +1,7 @@
 <div class ="container">
-  <h2 class="product-category">Item list</h2>
+
       <table class="table">
         <thead>
-          <tr>
-            <label for="">Searching by item label :</label>
-            <input
-            class=""
-            type="text"
-            placeholder="Search Product..."
-          />
-          </tr>
           <tr>
             <th scope="col">#</th>
             <th scope="col">Title</th>
@@ -30,7 +22,7 @@
             <td>{{ product.discount}}</td>
             <td>{{ product.gender}}</td>
             <td> <button (click)="deleteData(product.id)" class="btn btn-danger" >delete</button>  </td>
-            <td> <button (click)="updateproduct(product.id)" >edit</button>  </td>
+            <td> <button (click)="updateproduct(product.id)" class="btn btn-warning">edit</button>  </td>
           </tr>
         </tbody>
       </table>
@@ -38,7 +30,7 @@
       <div class="continer">
         <div class="left-le"></div>
         <div class="right-re">
-            <h1 style="color: rgb(252 189 57)">Add Product</h1>
+            <h1 style="color: rgb(252 189 57)">Update Product</h1>
             <br />
             <div>
                 <form enctype="multipart/form-data">

@@ -6,12 +6,10 @@ import axios from 'axios'
   styleUrls: ['./male.component.css']
 })
 export class MaleComponent implements OnInit {
-
   ngOnInit(): void {
     this.getData()
     }
     manitems=[]
-  
     async getData() {
       try {
         const response =await axios.get("http://localhost:3000/items/getmale");
@@ -21,5 +19,4 @@ export class MaleComponent implements OnInit {
         console.log(error);
       }
   }
-
 }

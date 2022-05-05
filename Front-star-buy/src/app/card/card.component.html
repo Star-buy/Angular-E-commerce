@@ -1,24 +1,22 @@
 <body>
+    <div class="div-a">
+        <h1 style="text-align: center" class="title-product">Products</h1>
     <section class="product">
-        <h2 class="product-category">Selling</h2>
         <div *ngFor="let item of items; let index = index" class="product-container">
          <div   class="product-card">
             <div class="product-image">
-                <span class="discount-tag" *ngIf="item['discount']"  > {{item['discount']}}</span>
+                <span class="discount-tag" *ngIf="item['discount']"  > {{item['discount']}}%</span>
                 <img [src]="item['image']" class="product-thumb">
                 <button class="card-btn" routerLink="/payment" >add to whislist</button><br/>
             </div>
             <div class="product-info">
                 <h2  class="product-brand"> {{item['title']}} </h2>
                 <p class="product-short-des">{{item['description']}}</p>
-                <span  class="price">{{item['price']}}</span><span class="actual-price"  > 10TND</span>
+                <span  class="price">{{item['price']}}TND</span><span class="actual-price"  > 10TND</span>
             </div>
         </div>
     </div>
     </section>
+</div>
 </body>
-
-
 <router-outlet></router-outlet>
-
-

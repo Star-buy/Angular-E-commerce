@@ -10,20 +10,17 @@ import { MaleComponent } from './male/male.component';
 import { FemaleComponent } from './female/female.component';
 import { KidsComponent } from './kids/kids.component';
 import { AdminDataComponent } from './admin-data/admin-data.component';
+// import { AdminDataEditItemComponent } from './admin-edit-item/admin-edit-item.component';
 import { AdminProductsComponent } from './admin-products/admin-products.component';
 import { AdminPartComponent } from './adminPart/adminPart.component';
 import { ReviewComponent } from './review/review.component';
 import {SigninComponent} from './signin/signin.component';
 import {CarousselComponent} from "./caroussel/caroussel.component"
 // import { AccessoriesComponent } from './accessories/accessories.component';
-
 // import { ReviewListComponent } from './review-list/review-list.component';
-
-
 // import { AdminDataComponent } from './admin-data/admin-data.component';
 // import { CardComponent } from './card/card.component';
 // import { ReviewListComponent } from './review-list/review-list.component';
-
 const routes: Routes = [
   {
     component: NavbarComponent, path: "",
@@ -32,6 +29,8 @@ const routes: Routes = [
       { component: UnderNavComponent, path: "underNav" },
       { component: HomeComponent, path: "home"},
       { component:ReviewComponent,path:"review"},
+      { component: SignupComponent, path: "signup" },
+      {component:SigninComponent, path:"signin"},
       // { component:SignupComponent, path: "signup" },
     ]
   },
@@ -39,17 +38,15 @@ const routes: Routes = [
   { component: MaleComponent, path: "male" },
   { component: FemaleComponent, path: "female" },
   { component: KidsComponent, path: "kids" },
-  { component: AdminDataComponent, path: "admin-data" },  
+  { component: AdminDataComponent, path: "admin-data" },
   { component: AdminPartComponent, path: "admin"} ,
   { component: AdminProductsComponent, path: "admin-products" },
-  { component: SignupComponent, path: "signup" },
-  {component:SigninComponent, path:"signin"},
   // {component:SignupComponent, path:"signup"},
   // {component:UnderNavComponent, path:"underNavComponent"},
   // {component:ReviewComponent,path:"review"},
   // {component:ReviewListComponent,path:"review-list"},
   // {component:AccessoriesComponent, path: "accessories"},
-  // {component:AdminDataComponent, path: "admin-data"},
+   {component:AdminDataComponent, path: "admin-data"},
   // {component:CardComponent, path: "card"},
 ]
 @NgModule({

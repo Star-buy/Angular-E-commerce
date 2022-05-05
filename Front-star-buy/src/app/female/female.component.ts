@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
 import axios from 'axios'
 @Component({
   selector: 'app-female',
@@ -8,12 +7,10 @@ import axios from 'axios'
   styleUrls: ['./female.component.css']
 })
 export class FemaleComponent implements OnInit {
-
   ngOnInit(): void {
     this.getData()
     }
     items=[]
-  
     async getData() {
       try {
         const response =await axios.get("http://localhost:3000/items/getfemale");

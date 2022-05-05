@@ -31,7 +31,9 @@ loginUser(f:any){
 
   axios.post("http://localhost:3000/users/login" , {email,password}).then(res=> { 
 localStorage.setItem('token', res.data);
-  })
+alert('login successful')  
+window.location.href = 'http://localhost:4200/underNav'
+})
 //   this.aus.loginUser(data).subscribe(data=>{
   
 //     console.log(data)

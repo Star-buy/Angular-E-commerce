@@ -1,8 +1,7 @@
-<p>male works!</p>
-<p>male works!</p>
-<div class="product">
-    <h2 class="product-category">Selling</h2>
-    <div *ngFor = "let item of manitems; let index = index" class="product-container">
+<div class="div-a">
+    <h1 style="text-align: center" class="title-product"> ManProducts</h1>
+    <div class="product">
+    <form *ngFor = "let item of manitems; let index = index" class="product-container">
      <div  class="product-card">
         <div class="product-image">
             <span class="discount-tag" *ngIf="item['discount']" > {{item['discount']}}</span>
@@ -13,6 +12,7 @@
             <h2  class="product-brand">  {{item['title']}}</h2>
             <p class="product-short-des"> {{item['description']}} </p>
             <span  class="price">$ {{item['price']}} TND </span><span class="actual-price" *ngIf="item['discount']" > {{ (item['price'] * item['discount'])/100 }}  TND</span>
-        </div> 
+        </div>
     </div>
+</form>
 </div>

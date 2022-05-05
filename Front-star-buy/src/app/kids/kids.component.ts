@@ -6,12 +6,10 @@ import axios from 'axios';
   styleUrls: ['./kids.component.css']
 })
 export class KidsComponent implements OnInit {
-
   ngOnInit(): void {
     this.getData()
     }
     items=[]
-  
     async getData() {
       try {
         const response =await axios.get("http://localhost:3000/items/getkids");
@@ -20,6 +18,5 @@ export class KidsComponent implements OnInit {
       catch (error) {
         console.log(error);
       }
-
 }
 }

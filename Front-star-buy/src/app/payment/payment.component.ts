@@ -17,9 +17,9 @@ export class PaymentComponent implements OnInit {
     console.log(this.getdata());
     
   }
-  image="https://res.cloudinary.com/dm6yw4dn0/image/upload/v1651702090/ivkziqs6h3liptufyfhj.webp"
-  title="t-shirt"
-  price=500
+  image="https://res.cloudinary.com/dm6yw4dn0/image/upload/v1651744739/trzwnxw92ktydxo53aar.jpg"
+  title="JEAN"
+  price=1099
 
   getimage(event: any){
 this.image = event.target.value;
