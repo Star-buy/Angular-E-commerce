@@ -28,7 +28,6 @@ export class SignupComponent implements OnInit {
       this.url = reader.result
      }
     }
-    
 
   GetEmail(event:any){
     this.email = event.target.value
@@ -68,9 +67,9 @@ const data1={
 
         axios.post("http://localhost:3000/users/signup" ,data1 ).then(res=> { 
         console.log(email,password,userName,confirmPassword)
-
+        alert(res.data)
           
-      
+        window.location.href= 'http://localhost:4200/signin'
           console.log(res)
 
         })

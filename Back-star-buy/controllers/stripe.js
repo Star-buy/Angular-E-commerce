@@ -43,7 +43,7 @@ module.exports = {
             success_url: "http://localhost:3000",
             cancel_url: "http://localhost:3000",
           });
-          res.send(session);
+          res.send(session.url);
         }
       });
     }

@@ -7,7 +7,7 @@
   margin: 44px auto;
   box-sizing: border-box;
   background: transparent;
-  box-shadow: 14px 14px 20px #ecac62, -14px -14px 20px rgb(225, 151, 90);
+  box-shadow: 14px 14px 20px #ECAC62, -14px -14px 20px rgb(225, 151, 90);
 }
 .banner{
   width: 100%;
@@ -24,13 +24,17 @@
   margin: auto;
   border-radius: 50%;
   box-sizing: border-box;
-  box-shadow: 7px 7px 10px #CBCED1, -7px -7px 10px white;
+<<<<<<< HEAD
+  box-shadow: 7px 7px 10px #D89258, -7px -7px 10px #D89258;
+=======
+  box-shadow: 7px 7px 10px #d89258, -7px -7px 10px #d89258;
+>>>>>>> d134a56c12b5a31b3eabe974282ef6d618fe5dac
 }
 .brandtitle {
   margin-top: 10px;
   font-weight: 900;
   font-size: 2.9rem;
-  color: #ff621e;
+  color: #FF621E;
   letter-spacing: 1px;
   text-align: center;
   font-style: italic;
@@ -44,7 +48,6 @@
   font-size: 25px;
   text-align: center;
   font-style: oblique;
-
 }
 .pass,
 .inpat,
@@ -96,20 +99,18 @@
   box-sizing: border-box;
 }
 .log {
- 
     color: rgb(255 255 255);
     margin-top: 23px;
-    background: #ecac62;
+    background: #ECAC62;
     height: 55px;
     border-radius: 11px;
     cursor: pointer;
     font-weight: 950;
-    box-shadow: 6px 6px 6px #cbced1, -6px -6px 6px white;
+    box-shadow: 6px 6px 6px #CBCED1, -6px -6px 6px white;
     transition: 0.5s;
     width: 50%;
     text-align: center;
     margin-inline: auto;
-
 }
 .log:hover {
   box-shadow: none;
@@ -185,13 +186,13 @@ textarea {
   }
   input:not(:checked) ~ label:hover,
   input:not(:checked) ~ label:hover ~ label{
-    color: #ecac62;
+    color: #ECAC62;
   }
   input:checked ~ label{
-    color: #ecac62;
+    color: #ECAC62;
   }
   input#rate-5:checked ~ label{
-    color: #ecac62;
+    color: #ECAC62;
     text-shadow: 0 0 20px #952;
   }
   #rate-1:checked ~ form header:before{
@@ -209,11 +210,10 @@ textarea {
   #rate-5:checked ~ form header:before{
     content: "I just love it ";
   }
-  
  .form .header{
     width: 100%;
     font-size: 25px;
-    color: #ecac62;
+    color: #ECAC62;
     font-weight: 500;
     margin: 5px 0 20px 0;
     text-align: center;
@@ -228,5 +228,3 @@ textarea {
     color: #CBCED1;
     font-style: italic;
   }
- 
- 
