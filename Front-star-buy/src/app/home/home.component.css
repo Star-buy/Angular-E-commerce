@@ -6,7 +6,7 @@
 .banner{
     width: 100%;
     height: 100vh;
-    background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),url(https://imagesvc.meredithcorp.io/v3/mm/image?q=60&c=sc&poi=%5B1000%2C651%5D&w=2000&h=1000&url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F24%2F2017%2F05%2Fgettyimages-6117-000984-2000.jpg);
+    background-image: linear-gradient(rgba(121, 121, 121, 0.75),rgba(0,0,0,0.75)),url(https://imagesvc.meredithcorp.io/v3/mm/image?q=60&c=sc&poi=%5B1000%2C651%5D&w=2000&h=1000&url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F24%2F2017%2F05%2Fgettyimages-6117-000984-2000.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position:center;

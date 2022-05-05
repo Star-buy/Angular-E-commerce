@@ -41,6 +41,15 @@ module.exports = {
       callback(err, result);
     });
   },
+  getItemById: (id, callback) => {
+    const sql = " SELECT * FROM items WHERE id = ?; ";
+    connection.query(sql,id, (err, result) => {
+      callback(err, result);
+      console.log(result);
+    });
+  },
+
+
   deleteitem: (id, callback) => {
     const sql = "DELETE FROM items WHERE id = ?;";
     connection.query(sql, id, (err, result) => {

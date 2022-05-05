@@ -12,7 +12,6 @@ export class AdminDataEditItemComponent implements OnInit {
   public product: any = {} as any;
   public item: any = {} as any;
   public itemId: string | null = null;
- 
 
   constructor(
     private userService: UsersService,
@@ -37,15 +36,15 @@ export class AdminDataEditItemComponent implements OnInit {
         });
 
         if (this.itemId) {
-          this.userService.getItem(this.itemId).subscribe(
-            (data) => {
-             this.item = data;
-              console.log("My data", this.itemId);
-            },
-            (error) => {
-              console.log(error);
-            }
-          );
+          // this.userService.getItem(this.itemId).subscribe(
+          //   (data) => {
+          //    // this.item = data;
+          //     console.log("My data", this.itemId);
+          //   },
+          //   (error) => {
+          //     console.log(error);
+          //   }
+          // );
 
           console.log("My data");
         }

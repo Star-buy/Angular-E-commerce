@@ -2,7 +2,11 @@
 
 
     <!-- <pre>{{ products | json }}</pre> -->
+
+    <!-- <pre>{{ product| json }}</pre> -->
+
     <pre>{{ product| json }}</pre>
+
 
     <div class="continer">
         <div class="left-le"></div>
@@ -10,6 +14,63 @@
             <h1 style="color: rgb(252 189 57)">Add Product</h1>
             <br />
             <div>
+
+                <form enctype="multipart/form-data">
+                    <label class="form-label">Title</label>
+                    <input
+                        type="text"
+                      #title  name="title"
+                        class="form-control"
+                        placeholder="Product name..."
+                        required (change)="getTitle($event)"
+                        />
+
+                    <p>Price</p>
+                    <input
+                    type="price"
+                    #price  name="title"
+                      class="form-control"
+                      placeholder="price"
+                      required (change)="getPrice($event)"
+                    />
+                    <p>discount</p>
+                    <input
+                    type="number"
+                    #discount  name="discount"
+                      class="form-control"
+                      placeholder="discount"
+                      required (change)="getDiscount($event)" />
+              
+                    <p>Description</p>
+                    <textarea rows="4" cols="50" class="form-control"
+                    type="text"
+                    #description  name="description"
+                      class="form-control"
+                      placeholder="description..."
+                      required (change)="getDescription($event)"
+                    >
+                    </textarea>
+                    <p>stock</p>
+                    <input
+                    type="stock"
+                    #stock  name="stock"
+                      class="form-control"
+                      placeholder="stock"
+                      required (change)="getStock($event)"
+                    />
+                    <br />
+                    <div>
+                        <h2 class="textoo">Select your image</h2>
+                      
+                      <input name="image" type="file" required (change)="seletImage($event)"><br/>
+                        <img class="image" *ngIf="url" [src]="url" alt="image" />
+                      </div>
+                    <div>
+                    </div>
+                    <br />
+                    <select #gender name="gender"                       required (change)="getGender($event)"
+                    class="form-select" aria-label="Default select example">
+
                 <form action="" (submit)="createSubmit()" enctype="multipart/form-data">
                     <label class="form-label">Title</label>
                     <input
@@ -40,6 +101,13 @@
                     name ="discount" type="number" 
                     placeholder="discount" 
                     class="form-control" />
+
+                    <p>stock</p>
+                    <input
+                    [(ngModel)]="product.stock" 
+                    name ="stock" type="number" 
+                    placeholder="stock" 
+                    class="form-control" />
               
                     <p>Description</p>
                     <textarea rows="4" cols="50" class="form-control"
@@ -53,21 +121,37 @@
                     <br />
                     <div>
                         <label for="formFileLg" class="form-label">Large file input example</label>
-                        <input class="form-control form-control-lg" id="formFileLg" type="file">
+                        
+
+
+                        <input  type="file" required (change)="seletImage($event)"><br/>
+                        <img class="image" *ngIf="url" [src]="url" alt="image" />
+
                       </div>
                     <div >
  
                     </div>
                     <br />
                     <select name="gender" [(ngModel)]="product.gender" class="form-select" aria-label="Default select example">
-                        <option value="none" selected>Gender</option>
+                       <option value="none" selected>Gender</option>
                         <option value="male">Male</option>
                         <option value="female">Female</option>
                         <option value="kids">kids</option>
                     </select>
+
+                    <button class="btn btn-primary"  (click)="addproduct()" >Add</button>
+
                     <button class="btn btn-primary">Add</button>
+
                 </form>
             </div>
         </div>
    </div>
+
+   </div>
+
 </div>
+
+
+</div>
+
