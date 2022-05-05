@@ -170,8 +170,12 @@ module.exports = {
                                 }
                                 res.send(token);
                               }
+
+                            );                          } else if (result[0].role === null) {
+
                             );
                           } else if (result[0].role === null) {
+
                             //return res.send("login successful");
                             users.getAll(email, (err, result) => {
                               if (err) {

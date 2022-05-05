@@ -72,8 +72,11 @@
         <h2 class="textoo">Select your image</h2>
       
       <input name="image" type="file" required (change)="seletImage($event)"><br/>
-        <img class="image" *ngIf="url" [src]="url" alt="image" /></div>
+        <img class="image" *ngIf="url" [src]="url" alt="image" />
+      </div>
+
       <select class="nwme" name="gender" style="align-items: center">
+
         <option value="none" selected>Gender</option>
         <option value="male">Male</option>
         <option value="female">Female</option>
